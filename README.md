@@ -1,4 +1,4 @@
-# skills
+# Agent Skills
 
 Agent skills for a structured engineering workflow. Compatible with [agentskills.io](https://agentskills.io).
 
@@ -7,13 +7,13 @@ I built these to work more efficiently with AI coding agents. They took shape wh
 ## Install
 
 ```
-npx skills@latest add cniska/skills
+npx skills add cniska/skills
 ```
 
 Or pick individual skills:
 
 ```
-npx skills@latest add cniska/skills -s plan
+npx skills add cniska/skills -s plan
 ```
 
 ## What is in here
