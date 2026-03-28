@@ -22,6 +22,7 @@ npx skills add cniska/skills -s plan
 
 - **explore** — Ask questions one at a time until the task is clear. If the code can answer, read the code instead of asking.
 - **plan** — Design a feature through dialogue. The plan emerges from conversation, not isolation.
+- **tdd** — Red-green-refactor. One test, one implementation, one refactor pass. Vertical slices, not horizontal.
 - **issue** — Create a GitHub issue. Check for duplicates, show a draft, get approval before creating.
 - **pr** — Create a pull request. Runs verification and review before opening.
 
