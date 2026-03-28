@@ -24,11 +24,11 @@ npx skills add cniska/skills -s plan
 - **plan** — Design a feature through dialogue. The plan emerges from conversation, not isolation.
 - **tdd** — Red-green-refactor. One test, one implementation, one refactor pass. Vertical slices, not horizontal.
 - **issue** — Create a GitHub issue. Check for duplicates, show a draft, get approval before creating.
+- **review** — Run all audits below against the current branch diff in one pass.
 - **pr** — Create a pull request. Runs verification and review before opening.
 
 ### Audits
 
-- **review** — Run all audits below against the current branch diff in one pass.
 - **style-audit** — Naming, control flow, pattern consistency. Enforces local conventions, not generic style guides.
 - **arch-audit** — Boundaries, indirection pressure, contract integrity. If a layer carries no policy, remove it.
 - **docs-audit** — Doc drift, terminology gaps, outdated names after refactors.
