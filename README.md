@@ -1,6 +1,6 @@
 # Agent Skills
 
-Agent skills for a structured engineering workflow. Compatible with [agentskills.io](https://agentskills.io).
+Opinionated agent skills for a structured engineering workflow. Compatible with [agentskills.io](https://agentskills.io).
 
 I built these to work more efficiently with AI coding agents. They took shape while building [Acolyte](https://github.com/cniska/acolyte). Generic prompts did not hold up across sessions — the agent would drift, second-guess itself, or produce noise instead of findings. These skills encode the workflow that actually worked.
 
