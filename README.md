@@ -22,23 +22,23 @@ npx skills add cniska/skills -s plan
 
 | Phase | Skill | Description |
 |-------|-------|------------|
-| **Plan** | explore | Ask questions one at a time until the task is clear. Read the code instead of asking when possible. |
-| | plan | Design a feature through dialogue. The plan emerges from conversation, not isolation. Slice vertically. |
-| **Build** | build | Implement in thin vertical slices. Verify and commit after each slice. |
-| | tdd | Red-green-refactor. One test, one implementation, one refactor pass. Mock at boundaries, not internals. |
-| | debug | Stop the line. Reproduce, localize, reduce, fix root cause, guard with a test, verify. |
-| | design | Design interfaces that are hard to misuse. Contract first, Hyrum's Law, validate at boundaries. |
-| | simplify | Reduce complexity while preserving behavior. Understand before touching (Chesterton's Fence). |
-| | git | Atomic commits, clean history, short-lived branches. Rewrite local history before pushing. |
-| | deprecation | Code is a liability. Build the replacement first, migrate consumers, remove completely. |
-| **Review** | review | Run all review dimensions against the branch diff. Severity labels, change sizing, fix-all policy. |
-| | style | Naming, control flow, pattern consistency. Enforces local conventions, not generic style guides. |
-| | architecture | Boundaries, indirection pressure, contract integrity. If a layer carries no policy, remove it. |
-| | security | Trust boundaries, execution safety, secret exposure. Only reports concrete attack paths. |
-| | tests | Coverage gaps, edge cases, test quality. Mock at boundaries only. Does not demand 100% coverage. |
-| | docs | Doc drift, terminology gaps, outdated names after refactors. |
-| **Ship** | pr | Create a pull request. Runs verification and review before opening. |
-| | issue | Create a GitHub issue. Check for duplicates, show a draft, get approval before creating. |
+| **Plan** | explore | Clarify requirements through systematic questions |
+| | plan | Design through dialogue, slice vertically |
+| **Build** | build | Vertical slices — implement, verify, commit, repeat |
+| | tdd | Red-green-refactor, mock at boundaries |
+| | debug | Stop the line, reproduce, fix root cause, guard with test |
+| | design | Hard-to-misuse interfaces, contract first, validate at boundaries |
+| | simplify | Reduce complexity, Chesterton's Fence, preserve behavior |
+| | git | Atomic commits, clean history, rewrite before pushing |
+| | deprecation | Build replacement first, migrate consumers, remove completely |
+| **Review** | review | Run all review dimensions, severity labels, fix-all policy |
+| | style | Local conventions, naming, control flow, readability |
+| | architecture | Boundaries, indirection pressure, contract integrity |
+| | security | Trust boundaries, execution safety, concrete attack paths only |
+| | tests | Coverage gaps, edge cases, test quality |
+| | docs | Drift detection, terminology, outdated names |
+| **Ship** | pr | Verify, review, then open the pull request |
+| | issue | Check duplicates, draft, get approval, create |
 
 ## Principles
 
@@ -46,20 +46,20 @@ These show up across multiple skills and form the shared engineering philosophy.
 
 | Principle | In practice | Skills |
 |-----------|------------|--------|
-| Vertical slices | Build one complete path through the stack at a time | build, plan |
-| Contract first | Define the interface before implementing it; the schema is the source of truth | design, build |
-| SRP | One responsibility per module, one logical change per commit | architecture, build, git |
-| YAGNI | Don't build for hypothetical future requirements | architecture, design |
-| Stop the line | When something breaks, stop building; errors compound | debug |
-| Prove-It pattern | For bugs, write a failing test first to prove the bug exists | debug, tdd |
-| Mock at boundaries | Mock external systems (database, network, APIs), not internal functions | tdd, tests |
-| DAMP over DRY | In tests, prefer descriptive and meaningful phrases over eliminating duplication | tdd |
-| Rule of 3 | Don't extract a shared function until you have three instances | simplify, style |
-| Chesterton's Fence | Before removing code you don't understand, first understand why it exists | simplify |
-| Hyrum's Law | All observable behaviors become dependencies; be deliberate about what you expose | design, deprecation |
-| Code as liability | Value comes from functionality, not code volume; less code is better | deprecation |
-| Save-point pattern | Commit early when exploring; uncommitted work can't be reverted | git |
-| Evidence threshold | Findings need concrete code references, not speculation | review skills |
+| Vertical slices | One complete path through the stack at a time | build, plan |
+| Contract first | Schema before implementation | design, build |
+| SRP | One responsibility per module, one change per commit | architecture, build, git |
+| YAGNI | Don't build for hypothetical requirements | architecture, design |
+| Stop the line | Something breaks — stop, don't push past it | debug |
+| Prove-It pattern | Failing test before fix | debug, tdd |
+| Mock at boundaries | Mock external systems, not internal functions | tdd, tests |
+| DAMP over DRY | Descriptive tests over deduplicated tests | tdd |
+| Rule of 3 | Extract after three instances, not before | simplify, style |
+| Chesterton's Fence | Understand before removing | simplify |
+| Hyrum's Law | All observable behavior becomes a commitment | design, deprecation |
+| Code as liability | Less code serving the same purpose is better | deprecation |
+| Save-point pattern | Commit early when exploring uncertain changes | git |
+| Evidence threshold | Concrete references, not speculation | review skills |
 
 ## How they work
 
