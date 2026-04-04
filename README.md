@@ -2,6 +2,10 @@
 
 Engineering skills for AI coding agents. Each skill is a step-by-step workflow the agent follows — not reference documentation. Compatible with [agentskills.io](https://agentskills.io).
 
+```
+plan → build → review
+```
+
 I wrote these to work more efficiently with AI coding agents. They are opinionated, based on 15+ years of building production software, and encode the workflow I actually follow. They took shape while building [Acolyte](https://github.com/cniska/acolyte), where generic prompts did not hold up across sessions; the agent would drift, second-guess itself, or produce noise instead of findings.
 
 Some ideas refined after reviewing [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
@@ -37,7 +41,7 @@ npx skills add cniska/skills -s plan
 | | security | Trust boundaries, execution safety, concrete attack paths only |
 | | tests | Coverage gaps, edge cases, test quality |
 | | docs | Drift detection, terminology, outdated names |
-| **Ship** | pr | Verify, review, then open the pull request |
+| **Workflow** | pr | Verify, review, then open the pull request |
 | | issue | Check duplicates, draft, get approval, create |
 
 ## Principles
