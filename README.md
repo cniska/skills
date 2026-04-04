@@ -4,7 +4,7 @@ Engineering skills for AI coding agents. Each skill is a step-by-step workflow t
 
 I wrote these to work more efficiently with AI coding agents. They are opinionated, based on 15+ years of building production software, and encode the workflow I actually follow. They took shape while building [Acolyte](https://github.com/cniska/acolyte), where generic prompts did not hold up across sessions; the agent would drift, second-guess itself, or produce noise instead of findings.
 
-Inspired by and builds on ideas from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
+Some ideas refined after reviewing [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
 
 ## Install
 
