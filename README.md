@@ -28,6 +28,7 @@ npx skills add cniska/skills -s plan
 |-------|-------|------------|
 | **Plan** | explore | Clarify requirements through systematic questions |
 | | plan | Design through dialogue, slice vertically |
+| | issue | Check duplicates, draft, get approval, create |
 | **Build** | build | Vertical slices — implement, verify, commit, repeat |
 | | tdd | Red-green-refactor, mock at boundaries |
 | | debug | Stop the line, reproduce, fix root cause, guard with test |
@@ -42,7 +43,6 @@ npx skills add cniska/skills -s plan
 | | tests | Coverage gaps, edge cases, test quality |
 | | docs | Drift detection, terminology, outdated names |
 | **GitHub** | pr | Verify, review, then open the pull request |
-| | issue | Check duplicates, draft, get approval, create |
 
 ## Principles
 
