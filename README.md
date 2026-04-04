@@ -20,42 +20,25 @@ npx skills add cniska/skills -s plan
 
 ## Skills
 
-### Plan
-
-| Skill | Description |
-|-------|------------|
-| explore | Ask questions one at a time until the task is clear. Read the code instead of asking when possible. |
-| plan | Design a feature through dialogue. The plan emerges from conversation, not isolation. Slice vertically. |
-
-### Build
-
-| Skill | Description |
-|-------|------------|
-| build | Implement in thin vertical slices. Verify and commit after each slice. |
-| tdd | Red-green-refactor. One test, one implementation, one refactor pass. Mock at boundaries, not internals. |
-| debug | Stop the line. Reproduce, localize, reduce, fix root cause, guard with a test, verify. |
-| design | Design interfaces that are hard to misuse. Contract first, Hyrum's Law, validate at boundaries. |
-| simplify | Reduce complexity while preserving behavior. Understand before touching (Chesterton's Fence). |
-| git | Atomic commits, clean history, short-lived branches. Rewrite local history before pushing. |
-| deprecation | Code is a liability. Build the replacement first, migrate consumers, remove completely. |
-
-### Review
-
-| Skill | Description |
-|-------|------------|
-| review | Run all review dimensions against the branch diff. Severity labels, change sizing, fix-all policy. |
-| style | Naming, control flow, pattern consistency. Enforces local conventions, not generic style guides. |
-| architecture | Boundaries, indirection pressure, contract integrity. If a layer carries no policy, remove it. |
-| security | Trust boundaries, execution safety, secret exposure. Only reports concrete attack paths. |
-| tests | Coverage gaps, edge cases, test quality. Mock at boundaries only. Does not demand 100% coverage. |
-| docs | Doc drift, terminology gaps, outdated names after refactors. |
-
-### Ship
-
-| Skill | Description |
-|-------|------------|
-| pr | Create a pull request. Runs verification and review before opening. |
-| issue | Create a GitHub issue. Check for duplicates, show a draft, get approval before creating. |
+| Phase | Skill | Description |
+|-------|-------|------------|
+| **Plan** | explore | Ask questions one at a time until the task is clear. Read the code instead of asking when possible. |
+| | plan | Design a feature through dialogue. The plan emerges from conversation, not isolation. Slice vertically. |
+| **Build** | build | Implement in thin vertical slices. Verify and commit after each slice. |
+| | tdd | Red-green-refactor. One test, one implementation, one refactor pass. Mock at boundaries, not internals. |
+| | debug | Stop the line. Reproduce, localize, reduce, fix root cause, guard with a test, verify. |
+| | design | Design interfaces that are hard to misuse. Contract first, Hyrum's Law, validate at boundaries. |
+| | simplify | Reduce complexity while preserving behavior. Understand before touching (Chesterton's Fence). |
+| | git | Atomic commits, clean history, short-lived branches. Rewrite local history before pushing. |
+| | deprecation | Code is a liability. Build the replacement first, migrate consumers, remove completely. |
+| **Review** | review | Run all review dimensions against the branch diff. Severity labels, change sizing, fix-all policy. |
+| | style | Naming, control flow, pattern consistency. Enforces local conventions, not generic style guides. |
+| | architecture | Boundaries, indirection pressure, contract integrity. If a layer carries no policy, remove it. |
+| | security | Trust boundaries, execution safety, secret exposure. Only reports concrete attack paths. |
+| | tests | Coverage gaps, edge cases, test quality. Mock at boundaries only. Does not demand 100% coverage. |
+| | docs | Doc drift, terminology gaps, outdated names after refactors. |
+| **Ship** | pr | Create a pull request. Runs verification and review before opening. |
+| | issue | Create a GitHub issue. Check for duplicates, show a draft, get approval before creating. |
 
 ## Principles
 
