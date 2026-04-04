@@ -28,7 +28,7 @@ npx skills add cniska/skills -s plan
 |-------|-------|------------|
 | **Plan** | explore | Clarify requirements through systematic questions |
 | | plan | Design through dialogue, slice vertically |
-| | issue | Check duplicates, draft, get approval, create |
+| | issue | File a GitHub issue — check duplicates, draft, get approval |
 | **Build** | build | Vertical slices — implement, verify, commit, repeat |
 | | tdd | Red-green-refactor, mock at boundaries |
 | | debug | Stop the line, reproduce, fix root cause, guard with test |
@@ -67,9 +67,9 @@ These show up across multiple skills and form the shared engineering philosophy.
 
 ## How they work
 
-Every review skill has the same structure: scope, evidence threshold, workflow, output format, red flags. The evidence threshold is what matters. Findings need concrete code references or plausible failure scenarios. No speculative concerns, no generic style dogma.
+Each skill is a `SKILL.md` with YAML frontmatter (`name`, `description`) and a structured workflow. Build skills guide you through doing work. Review skills evaluate existing code against criteria — each with a scope, evidence threshold, and output format. Findings need concrete code references, not speculation.
 
-The skills compose. `/review` runs all five review dimensions and deduplicates. `/pr` gates on `/review` before creating the pull request. You can run any skill individually if that is all you need.
+The skills compose. `/review` runs all five review dimensions and deduplicates. `/pr` gates on `/review` before creating the pull request. You can run any skill individually.
 
 ## License
 
