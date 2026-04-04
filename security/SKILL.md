@@ -1,9 +1,9 @@
 ---
-name: security-audit
-description: Audit security risks, trust boundaries, and unsafe defaults. Use when reviewing security posture or assessing risk before release.
+name: security
+description: Review security risks, trust boundaries, and unsafe defaults. Use when reviewing security posture or assessing risk before release.
 ---
 
-# Security Audit
+# Security
 
 Review security posture, trust boundaries, and unsafe defaults.
 
@@ -17,7 +17,7 @@ Review security posture, trust boundaries, and unsafe defaults.
 
 ### 2. Transport and encryption
 
-- transport security (`http/ws` vs `https/wss`)
+- transport security (HTTP vs HTTPS, WS vs WSS)
 - sensitive payloads traversing insecure channels
 - key/secret handling: env-based sourcing, redacted logs, no plaintext persistence
 
@@ -63,7 +63,7 @@ For each finding: **severity**, **affected files**, **attack/failure path**, **w
 
 Then: **Confirmed findings** | **Open questions** | **Optional hardening**.
 
-## Anti-patterns
+## Red flags
 
 - Fear-driven recommendations without concrete attack paths
 - Policy-heavy rewrites instead of minimal hardening

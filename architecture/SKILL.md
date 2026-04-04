@@ -1,9 +1,9 @@
 ---
-name: arch-audit
-description: Audit architecture, boundaries, and design consistency. Use when reviewing module boundaries, extension seams, or contract drift.
+name: architecture
+description: Review architecture, boundaries, and design consistency. Use when reviewing module boundaries, extension seams, or contract drift.
 ---
 
-# Architecture Audit
+# Architecture
 
 Review architecture quality, design consistency, extension seams, and pattern adherence.
 
@@ -31,9 +31,8 @@ Default: if a layer carries no policy, invariants, or boundary isolation, remove
 
 ### 3. Boundary and contract integrity
 
-- lifecycle phase boundaries
 - contracts and schemas as source of truth
-- DI convention consistency
+- dependency direction consistency
 - design-pattern consistency for extension seams
 
 ### 4. Cohesion and responsibility
@@ -65,7 +64,7 @@ For each finding: **severity**, **impacted files**, **violated pattern**, **evid
 
 Then: **Confirmed issues** | **Open questions** | **Optional refactors**.
 
-## Anti-patterns
+## Red flags
 
 - Suggesting speculative frameworks or plugin systems
 - Broad rewrites instead of minimal structural fixes

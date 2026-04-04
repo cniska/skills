@@ -1,9 +1,9 @@
 ---
-name: style-audit
-description: Audit code style, naming, patterns, and consistency. Use when reviewing code quality or style drift.
+name: style
+description: Review code style, naming, patterns, and consistency. Use when reviewing code quality or style drift.
 ---
 
-# Style Audit
+# Style
 
 Review code quality consistency, coding patterns, and style drift.
 
@@ -13,14 +13,14 @@ Review code quality consistency, coding patterns, and style drift.
 
 - naming consistency across types, constants, functions, and files
 - factory naming (`create*` for factories; avoid `build*` / `make*` unless established locally)
-- export shape: prefer direct `export const` over local alias + `export { ... }`
+- export shape: prefer direct exports over local alias + re-export
 - import clarity: avoid aliasing unless it resolves a collision
 - module layout consistency
 
 ### 2. Control flow and state modeling
 
-- switch exhaustiveness (`default` + `unreachable` when applicable)
-- assert patterns (`invariant` for impossible states vs user-facing errors)
+- switch exhaustiveness (`default` + unreachable when applicable)
+- assert patterns (invariant for impossible states vs user-facing errors)
 - prefer explicit status/state fields over boolean flags for lifecycle phases
 - prefer guard clauses and early returns over nested `if/else`
 - prefer data-driven lookups over long control-flow chains
@@ -30,7 +30,7 @@ Review code quality consistency, coding patterns, and style drift.
 Check where the codebase already has a clear local pattern:
 
 - table-driven or rule-driven structure where nearby code uses it
-- error classification: prefer `kind` contracts over message regex
+- error classification: prefer structured error kinds over message regex
 - repeated argument groups that want one named type
 - raw strings or codes that should become typed values
 
@@ -39,6 +39,8 @@ Check where the codebase already has a clear local pattern:
 - no banner or separator comments
 - no unused params, dead branches, or ad-hoc fallbacks
 - keep style aligned with nearby code
+- abstractions must earn their complexity — if a wrapper adds no policy, inline it
+- prefer clarity over cleverness: nested ternaries, chained reduces, and dense one-liners that require a mental pause should be simplified
 
 ## Evidence threshold
 
@@ -57,7 +59,7 @@ For each finding: **severity**, **file**, **violated convention**, **evidence**,
 
 Then: **Must-fix** | **Optional polish** | **Open questions** (if needed).
 
-## Anti-patterns
+## Red flags
 
 - Enforcing generic style dogma over local conventions
 - Broad rewrites instead of minimal fixes

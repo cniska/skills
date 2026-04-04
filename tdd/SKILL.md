@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Test-driven development with red-green-refactor. Use when building features or fixing bugs test-first.
+description: Drive implementation with red-green-refactor. Use when building features or fixing bugs test-first.
 ---
 
 # TDD
@@ -22,6 +22,7 @@ One test at a time. Each cycle is vertical — one test, one implementation, one
 - Observable behavior through public interfaces.
 - The contract the caller depends on, not the implementation behind it.
 - Error paths that have meaningful recovery or user-facing consequences.
+- Prefer DAMP (descriptive and meaningful phrases) over DRY in tests — each test should independently communicate what it verifies.
 
 ## What not to test
 
@@ -29,11 +30,11 @@ One test at a time. Each cycle is vertical — one test, one implementation, one
 - Type-system guarantees the compiler already enforces.
 - Trivial pass-through or delegation with no logic.
 
-## Evidence threshold
+## Mock at boundaries
 
-A test earns its place by catching a real bug or describing a behavior the type system cannot enforce. If a test would survive a complete rewrite of the internals, it is testing the right thing.
+Mock at system boundaries (database, network, file system, external APIs), not between internal functions. Prefer real implementations when practical. If a test would survive a complete rewrite of the internals, it is testing the right thing.
 
-## Anti-patterns
+## Red flags
 
 - Writing all tests first, then all implementation (horizontal slicing)
 - Mocking internals instead of testing through public interfaces
