@@ -41,7 +41,7 @@ npx skills add cniska/skills -s plan
 | | security | Trust boundaries, execution safety, concrete attack paths only |
 | | tests | Coverage gaps, edge cases, test quality |
 | | docs | Drift detection, terminology, outdated names |
-| **Workflow** | pr | Verify, review, then open the pull request |
+| **GitHub** | pr | Verify, review, then open the pull request |
 | | issue | Check duplicates, draft, get approval, create |
 
 ## Principles
