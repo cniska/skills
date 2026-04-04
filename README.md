@@ -1,12 +1,12 @@
 # Agent Skills
 
-Opinionated engineering skills for AI coding agents. Process, not prose. Compatible with [agentskills.io](https://agentskills.io).
+Engineering skills for AI coding agents. Compatible with [agentskills.io](https://agentskills.io).
 
 ```
 plan → build → review
 ```
 
-Built while developing [Acolyte](https://github.com/cniska/acolyte). Some ideas refined after reviewing [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
+I wrote these to work more efficiently with AI coding agents. They are opinionated, based on 15+ years of building production software, and encode the workflow I actually follow. They took shape while building [Acolyte](https://github.com/cniska/acolyte), where generic prompts did not hold up across sessions. Some ideas refined after reviewing [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
 
 ## Install
 
