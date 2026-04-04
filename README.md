@@ -1,25 +1,17 @@
 # Agent Skills
 
-Engineering skills for AI coding agents. Each skill is a step-by-step workflow the agent follows — not reference documentation. Compatible with [agentskills.io](https://agentskills.io).
+Opinionated engineering skills for AI coding agents. Process, not prose. Compatible with [agentskills.io](https://agentskills.io).
 
 ```
 plan → build → review
 ```
 
-I wrote these to work more efficiently with AI coding agents. They are opinionated, based on 15+ years of building production software, and encode the workflow I actually follow. They took shape while building [Acolyte](https://github.com/cniska/acolyte), where generic prompts did not hold up across sessions; the agent would drift, second-guess itself, or produce noise instead of findings.
-
-Some ideas refined after reviewing [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
+Built while developing [Acolyte](https://github.com/cniska/acolyte). Some ideas refined after reviewing [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
 
 ## Install
 
 ```
 npx skills add cniska/skills
-```
-
-Or pick individual skills:
-
-```
-npx skills add cniska/skills -s plan
 ```
 
 ## Skills
@@ -46,8 +38,6 @@ npx skills add cniska/skills -s plan
 
 ## Principles
 
-These show up across multiple skills and form the shared engineering philosophy.
-
 | Principle | In practice | Skills |
 |-----------|------------|--------|
 | Vertical slices | One complete path through the stack at a time | build, plan |
@@ -64,12 +54,6 @@ These show up across multiple skills and form the shared engineering philosophy.
 | Code as liability | Less code serving the same purpose is better | deprecation |
 | Save-point pattern | Commit early when exploring uncertain changes | git |
 | Evidence threshold | Concrete references, not speculation | review skills |
-
-## How they work
-
-Each skill is a `SKILL.md` with YAML frontmatter (`name`, `description`) and a structured workflow. Build skills guide you through doing work. Review skills evaluate existing code against criteria — each with a scope, evidence threshold, and output format. Findings need concrete code references, not speculation.
-
-The skills compose. `/review` runs all five review dimensions and deduplicates. `/pr` gates on `/review` before creating the pull request. You can run any skill individually.
 
 ## License
 
