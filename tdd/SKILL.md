@@ -34,6 +34,12 @@ One test at a time. Each cycle is vertical — one test, one implementation, one
 
 Mock at system boundaries (database, network, file system, external APIs), not between internal functions. Prefer real implementations when practical. If a test would survive a complete rewrite of the internals, it is testing the right thing.
 
+## See also
+
+- `build` for slice-by-slice execution
+- `tests` for review-time test adequacy checks
+- `references/testing-patterns.md` for concrete test heuristics
+
 ## Red flags
 
 - Writing all tests first, then all implementation (horizontal slicing)

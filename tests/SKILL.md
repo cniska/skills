@@ -46,6 +46,12 @@ For each finding: **severity**, **source file + test file**, **what is untested*
 
 Then: **Must-add** | **Should-add** | **Optional** | **Remove** (if any).
 
+## See also
+
+- `tdd` for implementation-time test discipline
+- `review` for multi-axis merge decisions
+- `references/testing-patterns.md` for concrete coverage and quality checks
+
 ## Red flags
 
 - Demanding 100% line coverage

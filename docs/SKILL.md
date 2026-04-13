@@ -28,6 +28,12 @@ For each finding: **severity**, **affected file**, **what drifted or is missing*
 
 Then: **Canonical updates needed** | **Optional cleanup**.
 
+## See also
+
+- `review` for cross-dimension merge decisions
+- `pr` for change summaries and issue linkage
+- `references/accessibility-checklist.md` for UI doc updates
+
 ## Red flags
 
 - Generic prose polishing

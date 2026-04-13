@@ -63,6 +63,12 @@ For each finding: **severity**, **affected files**, **attack/failure path**, **w
 
 Then: **Confirmed findings** | **Open questions** | **Optional hardening**.
 
+## See also
+
+- `design` for boundary-first contracts
+- `review` for merge gating and severity framing
+- `references/security-checklist.md` for implementation-level checks
+
 ## Red flags
 
 - Fear-driven recommendations without concrete attack paths

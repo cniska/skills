@@ -60,6 +60,12 @@ Default to fixing all findings — including trivial ones. Small issues left unf
 
 One section per review dimension (Style, Architecture, Documentation, Security, Tests), then a summary table: `category | must-fix | should-fix | optional`. Note categories with no findings.
 
+## See also
+
+- `style`, `architecture`, `docs`, `security`, `tests` for dimension-specific depth
+- `references/security-checklist.md` for concrete abuse-path checks
+- `references/testing-patterns.md` for test-quality review heuristics
+
 ## Red flags
 
 - Reviewing only the diff without reading touched files in context
