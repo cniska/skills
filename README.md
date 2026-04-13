@@ -40,13 +40,15 @@ npx skills add cniska/skills
 
 ## Local setup
 
-Enable repository hooks (for pre-push commit-message checks):
+Use Make targets for setup and checks:
 
 ```
-git config core.hooksPath .githook
+make bootstrap
 ```
 
-Active pre-push hook: [`.githook/pre-push`](.githook/pre-push)
+`make bootstrap` configures Git hooks and runs validation.
+
+Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 
 ## Skills
 
@@ -106,7 +108,7 @@ Run the validator before publishing changes:
 make validate
 ```
 
-`make validate` runs [`./scripts/validate.sh`](scripts/validate.sh).
+`make validate` is the supported command. It runs [`./scripts/validate.sh`](scripts/validate.sh) under the hood.
 
 CI runs the same validation on pull requests and pushes to `main` via [`.github/workflows/validate.yml`](.github/workflows/validate.yml).
 
@@ -114,13 +116,19 @@ CI also validates commit messages on pull requests via [`.github/workflows/commi
 
 ## Create a new skill
 
-Use the scaffold script:
+Use the Make target:
 
 ```
-./scripts/new-skill.sh <kebab-case-name> "<imperative description>"
+make new-skill NAME=<kebab-case-name> DESC="<imperative description>"
 ```
 
-Scaffold script: [`./scripts/new-skill.sh`](scripts/new-skill.sh)
+`make new-skill` is the supported command. It runs [`./scripts/new-skill.sh`](scripts/new-skill.sh) under the hood.
+
+For all available commands:
+
+```
+make help
+```
 
 Bootstrap script: [`./scripts/bootstrap.sh`](scripts/bootstrap.sh)
 
