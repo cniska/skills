@@ -1,0 +1,31 @@
+name: Validate Commit Messages
+
+on:
+  pull_request:
+
+jobs:
+  validate-commit-messages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate PR commit messages
+        run: |
+          set -euo pipefail
+          base_sha="${{ github.event.pull_request.base.sha }}"
+          head_sha="${{ github.event.pull_request.head.sha }}"
+
+          commits="$(git rev-list "$base_sha..$head_sha")"
+          if [[ -z "$commits" ]]; then
+            echo "No commits to validate"
+            exit 0
+          fi
+
+          for sha in $commits; do
+            subject="$(git log -1 --pretty=%s "$sha")"
+            body="$(git log -1 --pretty=%b "$sha")"
+            ./scripts/check-commit-message.sh "$subject" "$body"
+          done

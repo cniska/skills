@@ -6,12 +6,22 @@ Engineering skills for AI coding agents. Compatible with [agentskills.io](https:
 plan → build → review
 ```
 
-I wrote these to work more efficiently with AI coding agents. They are opinionated, based on 15+ years of building production software, and encode the workflow I actually follow. They took shape while building [Acolyte](https://github.com/cniska/acolyte), where generic prompts did not hold up across sessions. Some ideas refined after reviewing [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
+I wrote these to work more efficiently with AI coding agents. They are opinionated, based on 15+ years of building production software, and encode the workflow I actually follow. They took shape while building [Acolyte](https://github.com/cniska/acolyte), where generic prompts did not hold up across sessions.
+
+Some ideas were refined after reviewing [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
 
 ## Install
 
 ```
 npx skills add cniska/skills
+```
+
+## Local setup
+
+Enable repository hooks (for pre-push commit-message checks):
+
+```
+git config core.hooksPath .githook
 ```
 
 ## Skills
@@ -69,10 +79,24 @@ npx skills add cniska/skills
 Run the validator before publishing changes:
 
 ```
-./scripts/validate.sh
+make validate
 ```
 
-CI runs the same command on every pull request and push to `main` via `.github/workflows/validate.yml`.
+`make validate` runs `./scripts/validate.sh`.
+
+CI runs the same validation on pull requests and pushes to `main` via `.github/workflows/validate.yml`.
+
+CI also validates commit messages on pull requests via `.github/workflows/commit-messages.yml`.
+
+## Create a new skill
+
+Use the scaffold script:
+
+```
+./scripts/new-skill.sh <kebab-case-name> "<imperative description>"
+```
+
+Template reference: `SKILL_TEMPLATE.md`.
 
 ## License
 
