@@ -22,6 +22,12 @@ Build in thin vertical slices. Implement one piece, verify it, commit it, then m
 - **Contract-first** — define the schema and types first, then implement consumers.
 - **Risk-first** — tackle the uncertain part first, then build the straightforward parts on top.
 
+## See also
+
+- `plan` for scope and phase boundaries
+- `tdd` for red-green-refactor within each slice
+- `sdd` for source validation before implementation choices
+
 ## Red flags
 
 - More than 3 files changed without a commit

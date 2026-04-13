@@ -31,6 +31,12 @@ Split into phases if the work is large. Each phase independently valuable and ve
 
 For non-trivial plans, track agreed steps in a checklist as the conversation progresses. When planning is done, the checklist is ready — start executing.
 
+## See also
+
+- `explore` for pre-planning discovery
+- `build` for execution discipline per slice
+- `sdd` when plan decisions depend on external APIs or libraries
+
 ## Red flags
 
 - Disappearing to build a plan and returning with a document for approval

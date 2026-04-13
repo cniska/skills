@@ -46,6 +46,12 @@ Create a pull request for the current branch against `main`.
 - Never push without checking remote tracking status first
 - Always check for associated issues
 
+## See also
+
+- `review` for severity and gating decisions
+- `docs` for user-facing drift checks before merge
+- `sdd` when the change depends on version-specific APIs
+
 ## Red flags
 
 - Skipping verification because "tests passed earlier"

@@ -37,6 +37,12 @@ Follow established project conventions consistently. When no convention exists, 
 4. **Review for misuse.** Can a caller get into a bad state by passing valid-looking but wrong data? Add discriminants or branded types where confusion is likely.
 5. **Check extensibility.** Can this be extended without modifying existing consumers?
 
+## See also
+
+- `sdd` for source-backed API and framework decisions
+- `architecture` for boundary and dependency integrity
+- `references/security-checklist.md` for trust-boundary validation
+
 ## Red flags
 
 - Interfaces that require callers to know implementation details
