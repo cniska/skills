@@ -16,7 +16,7 @@ This repo exists to encode a practical engineering workflow for AI coding agents
 
 ## How I update these skills
 
-Maintenance inputs: daily use in my own projects, gaps observed in real sessions, and selective upstream review (for example Addy updates) as a signal, not a source of truth.
+Maintenance inputs: daily use in my own projects, gaps observed in real sessions, selective upstream review (for example Addy updates) as a signal, and external feedback when it aligns with these principles.
 
 I add guidance when it:
 
