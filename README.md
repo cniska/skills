@@ -10,6 +10,28 @@ I wrote these to work more efficiently with AI coding agents. They are opinionat
 
 Some ideas were refined after reviewing [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills).
 
+## Motivation
+
+This repo exists to encode a practical engineering workflow for AI coding agents in my own tone and decision style. The goal is consistent execution quality across sessions, not generic prompt patterns.
+
+## How I update these skills
+
+Maintenance inputs: daily use in my own projects, gaps observed in real sessions, and selective upstream review (for example Addy updates) as a signal, not a source of truth.
+
+I add guidance when it:
+
+- repeats in real work
+- improves quality, speed, or risk profile
+- can be verified with concrete checks
+- fits the way I want agents to operate
+
+I remove or simplify guidance when it:
+
+- no longer changes outcomes
+- becomes outdated
+- duplicates other skills
+- drifts toward generic "corp" voice without adding value
+
 ## Install
 
 ```
@@ -23,6 +45,8 @@ Enable repository hooks (for pre-push commit-message checks):
 ```
 git config core.hooksPath .githook
 ```
+
+Active pre-push hook: [`.githook/pre-push`](.githook/pre-push)
 
 ## Skills
 
@@ -69,10 +93,10 @@ git config core.hooksPath .githook
 
 ## Reference checklists
 
-- `references/testing-patterns.md`
-- `references/security-checklist.md`
-- `references/performance-checklist.md`
-- `references/accessibility-checklist.md`
+- [testing-patterns.md](references/testing-patterns.md)
+- [security-checklist.md](references/security-checklist.md)
+- [performance-checklist.md](references/performance-checklist.md)
+- [accessibility-checklist.md](references/accessibility-checklist.md)
 
 ## Validate skills
 
@@ -82,11 +106,11 @@ Run the validator before publishing changes:
 make validate
 ```
 
-`make validate` runs `./scripts/validate.sh`.
+`make validate` runs [`./scripts/validate.sh`](scripts/validate.sh).
 
-CI runs the same validation on pull requests and pushes to `main` via `.github/workflows/validate.yml`.
+CI runs the same validation on pull requests and pushes to `main` via [`.github/workflows/validate.yml`](.github/workflows/validate.yml).
 
-CI also validates commit messages on pull requests via `.github/workflows/commit-messages.yml`.
+CI also validates commit messages on pull requests via [`.github/workflows/commit-messages.yml`](.github/workflows/commit-messages.yml).
 
 ## Create a new skill
 
@@ -96,7 +120,11 @@ Use the scaffold script:
 ./scripts/new-skill.sh <kebab-case-name> "<imperative description>"
 ```
 
-Template reference: `SKILL_TEMPLATE.md`.
+Scaffold script: [`./scripts/new-skill.sh`](scripts/new-skill.sh)
+
+Bootstrap script: [`./scripts/bootstrap.sh`](scripts/bootstrap.sh)
+
+Template reference: [`SKILL_TEMPLATE.md`](SKILL_TEMPLATE.md).
 
 ## License
 
