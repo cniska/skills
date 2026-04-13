@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+checker="$repo_root/scripts/check-commit-message.sh"
+
+validate_commit() {
+  local sha="$1"
+  local subject body
+  subject="$(git log -1 --pretty=%s "$sha")"
+  body="$(git log -1 --pretty=%b "$sha")"
+
+  if ! "$checker" "$subject" "$body"; then
+    echo "error: invalid commit message in $sha" >&2
+    echo "  $subject" >&2
+    exit 1
+  fi
+}
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  # Deleted branch/tag push: nothing to validate locally.
+  if [[ "$local_sha" == "0000000000000000000000000000000000000000" ]]; then
+    continue
+  fi
+
+  if [[ "$remote_sha" == "0000000000000000000000000000000000000000" ]]; then
+    # New remote ref: validate commits not already on remotes.
+    while IFS= read -r sha; do
+      validate_commit "$sha"
+    done < <(git rev-list "$local_sha" --not --remotes)
+  else
+    while IFS= read -r sha; do
+      validate_commit "$sha"
+    done < <(git rev-list "$remote_sha..$local_sha")
+  fi
+done
