@@ -23,6 +23,7 @@ npx skills add cniska/skills
 | | issue | File a GitHub issue — check duplicates, draft, get approval |
 | **Build** | build | Vertical slices — implement, verify, commit, repeat |
 | | tdd | Red-green-refactor, mock at boundaries |
+| | sdd | Source-driven development: verify library and API behavior in primary sources |
 | | debug | Stop the line, reproduce, fix root cause, guard with test |
 | | design | Hard-to-misuse interfaces, contract first, validate at boundaries |
 | | simplify | Reduce complexity, Chesterton's Fence, preserve behavior |
@@ -52,8 +53,26 @@ npx skills add cniska/skills
 | Chesterton's Fence | Understand before removing | simplify |
 | Hyrum's Law | All observable behavior becomes a commitment | design, deprecation |
 | Code as liability | Less code serving the same purpose is better | deprecation |
+| Source over memory | Verify framework behavior in primary docs before implementation | sdd |
 | Save-point pattern | Commit early when exploring uncertain changes | git |
 | Evidence threshold | Concrete references, not speculation | review skills |
+
+## Reference checklists
+
+- `references/testing-patterns.md`
+- `references/security-checklist.md`
+- `references/performance-checklist.md`
+- `references/accessibility-checklist.md`
+
+## Validate skills
+
+Run the validator before publishing changes:
+
+```
+./scripts/validate.sh
+```
+
+CI runs the same command on every pull request and push to `main` via `.github/workflows/validate.yml`.
 
 ## License
 
