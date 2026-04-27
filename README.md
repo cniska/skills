@@ -56,12 +56,11 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 |-------|-------|------------|
 | **Plan** | explore | Clarify requirements through systematic questions |
 | | plan | Design through dialogue, slice vertically |
-| | issue | File a GitHub issue — check duplicates, draft, get approval |
+| | design | Hard-to-misuse interfaces, contract first, validate at boundaries |
 | **Build** | build | Vertical slices — implement, verify, commit, repeat |
 | | tdd | Red-green-refactor, mock at boundaries |
 | | sdd | Source-driven development: verify library and API behavior in primary sources |
 | | debug | Stop the line, reproduce, fix root cause, guard with test |
-| | design | Hard-to-misuse interfaces, contract first, validate at boundaries |
 | | simplify | Reduce complexity, Chesterton's Fence, preserve behavior |
 | | git | Atomic commits, clean history, rewrite before pushing |
 | | deprecation | Build replacement first, migrate consumers, remove completely |
@@ -71,7 +70,9 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 | | security | Trust boundaries, execution safety, concrete attack paths only |
 | | tests | Coverage gaps, edge cases, test quality |
 | | docs | Drift detection, terminology, outdated names |
-| **GitHub** | pr | Verify, review, then open the pull request |
+| **Meta** | issue | File a GitHub issue — check duplicates, draft, get approval |
+| | pr | Verify, review, then open the pull request |
+| | handoff | Summarize the session and reset context to save costs |
 
 ## Principles
 
