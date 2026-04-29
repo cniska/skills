@@ -41,6 +41,7 @@ Check where the codebase already has a clear local pattern:
 - no unused params, dead branches, or ad-hoc fallbacks
 - keep style aligned with nearby code
 - abstractions must earn their complexity — if a wrapper adds no value, inline it
+- avoid nested ternaries for branching logic; use explicit conditionals, maps, or helpers when multiple cases affect readability
 - prefer clarity over cleverness: dense one-liners that require a mental pause should be simplified
 
 ## Evidence threshold
