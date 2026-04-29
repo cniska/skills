@@ -11,7 +11,7 @@ Create a pull request for the current branch against `main`.
 
 - Title: Conventional Commit format (`type(scope): description`), under 60 chars, no trailing period
 - Body: follow `.github/pull_request_template.md` if it exists — fill in each section, do not add or remove sections
-- Bullets: plain English, describe *what* changed and *why* — no code blocks, no prose paragraphs
+- Bullets: high-signal plain English only; describe reviewer-relevant *what* and *why* — no code blocks, no prose paragraphs, no implementation bookkeeping
 - If an issue matches the branch work, add `Fixes #<number>` at the end of the body
 
 ## Workflow
