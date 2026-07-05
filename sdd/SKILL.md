@@ -18,11 +18,11 @@ Implement against primary sources, not memory. Confirm behavior in official docs
 
 ## Source quality order
 
-1. Official product/library documentation
+1. Official product/library documentation **at the pinned version**
 2. Language/runtime specifications
-3. Maintainer-authored examples or release notes
-4. Upstream source code
-5. Third-party blogs and forum posts (supporting evidence only)
+3. Maintainer-authored examples, release notes, or changelogs
+4. Upstream source code and its tests
+5. Third-party blogs and forum posts — supporting evidence only, time-boxed
 
 ## See also
 

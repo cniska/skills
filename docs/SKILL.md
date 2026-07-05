@@ -22,6 +22,10 @@ Review doc coverage, terminology drift, and canonical doc accuracy.
 - Bullets starting with a word or phrase use a capital letter.
 - No unnecessary fenced code blocks for content that reads as prose.
 
+## Workflow
+
+Read the diff, then the affected doc files. For changes touching many docs, fan out **fast-tier** readers — one per doc — to surface drift candidates. Verify each before reporting.
+
 ## Output
 
 For each finding: **severity**, **affected file**, **what drifted or is missing**, **fix direction**.

@@ -7,49 +7,51 @@ description: Summarize the session and reset context to save costs. Use when the
 
 Summarize what matters, clear the noise, and continue without paying for stale tokens.
 
+Two modes — infer from the argument:
+
+- **End-of-session** (default, no argument or a topic): for yourself. What does the next session need to resume?
+- **Delegate** (argument names a recipient or different context): for another agent or person. What does that recipient need to start the task? Strip originating project context; orient to the target.
+
 ## Workflow
 
-1. Check if the conversation started with a prior handoff summary. If so, merge it with this session's work into one cumulative summary — carry forward anything still relevant, drop anything resolved or stale.
-2. Write the summary (see format below).
-3. Print the summary in a fenced code block so the user can review it.
-4. Copy the summary to the clipboard using the appropriate command for the OS (`pbcopy` on macOS, `clip` on Windows, `xclip -selection clipboard` on Linux).
-5. Tell the user the summary is on their clipboard and to clear the context, then paste it as their first message.
+1. Check if the conversation started with a prior handoff summary. If so, merge it — carry forward what's still live, drop what's resolved or stale. Never append verbatim.
+2. Write the summary to a unique path: `date -u +/tmp/handoff-%Y%m%dT%H%M%SZ.md`. The Write is silent — it is not the review copy.
+3. **Print the full summary once** in your reply and ask whether it's good to copy or needs changes. This is the only place the user sees it. If edits are needed, rewrite the file and print the revised version — never `cat` or repeat it otherwise.
+4. Only once confirmed: copy to clipboard (`pbcopy < <path>` on macOS, `xclip -selection clipboard < <path>` on Linux). Tell the user to `/clear` and paste it as the first message.
 
-The summary travels forward as the first user message in the new context, so it must be self-contained.
+Note: context clearing is client-side — the user must do it. This is the only manual step.
 
-Note: context clearing is a client-side operation — the model cannot invoke it. The user must do it themselves. This is the only manual step.
+## Format
 
-## Summary format
+    # Session summary — <topic or ticket>
 
-```
-# Session summary — <branch or topic>
+    ## Status
+    <one line: where the work actually stands>
 
-## What was built
-<bullet list: files changed, features added, decisions made>
+    ## Decisions and why
+    <choices that still constrain what the next session will do — with the why>
 
-## Design decisions
-<any non-obvious choices and why they were made>
+    ## Dead ends
+    <approaches tried that didn't work>
 
-## What's next
-<concrete next steps — enough for a cold start>
-```
+    ## Pointers
+    <file paths, doc URLs, ticket IDs — addresses, not content>
 
-Keep it dense. Omit anything derivable from `git log`, the code, or docs. The goal is to preserve intent and decision rationale, not mechanics.
+    ## Open
+    <blockers, questions, things waiting on someone else>
 
-## What to include
+    ## Next
+    <one concrete first action — enough for a cold start>
 
-- Carried-forward context from prior handoff summaries (merged, not appended)
-- Work completed this session and its outcome
-- Non-obvious decisions and their rationale
-- Open questions or blockers
-- The immediate next step
+    Keep going.
 
-## What to omit
+Drop sections that have no content. The closing `Keep going.` is load-bearing — without it the next session tends to wait for instructions instead of picking up from Next.
 
-- File contents, diffs, or command output
-- Things already in code comments or docs
-- Anything that `git log` or `gh issue view` would show
-- Resolved items from prior handoff summaries
+## What to include / omit
+
+Include: decisions and the reasoning behind them, open questions, the immediate next step, carried-forward context (merged, not appended).
+
+Omit: file contents, diffs, command output, anything derivable from `git log` or the code.
 
 ## Red flags
 
@@ -57,3 +59,4 @@ Keep it dense. Omit anything derivable from `git log`, the code, or docs. The go
 - Omitting the "why" behind key decisions
 - Skipping next steps — a cold context needs a foothold
 - Appending prior summaries verbatim instead of merging them
+- Printing the summary more than once

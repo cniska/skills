@@ -9,6 +9,8 @@ Build in thin vertical slices. Implement one piece, verify it, commit it, then m
 
 ## Workflow
 
+Before the first slice, if not already on a dedicated branch, create one. Consider an isolated worktree (`git worktree add -b <topic> .claude/worktrees/<topic>`) so the main session stays an orchestrator. Never use `git -C <path>` — always `cd` into the target first.
+
 1. **Pick the smallest slice** that delivers a complete, testable path through the change.
 2. **Read before writing.** Load the relevant files, understand existing patterns, check for utilities you can reuse.
 3. **Implement the slice.** Stay within its boundary — don't fix adjacent issues or refactor unrelated code.

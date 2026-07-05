@@ -54,7 +54,7 @@ Only report issues with concrete evidence in code, contracts, or dependency flow
 ## Workflow
 
 1. Build expected architecture map from project docs.
-2. Compare implementation against that map.
+2. Compare implementation against that map. For large diffs or audits spanning many modules, fan out **fast-tier** readers — one per module or boundary — to collect raw evidence. Verify findings in this session before reporting.
 3. Run cycle and indirection pass on core entrypoints.
 4. Check whether the change increases coupling or creates contract drift.
 5. Report findings ordered by severity.

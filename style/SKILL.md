@@ -52,7 +52,7 @@ Only flag issues with a clear local convention or documented repo-wide pattern. 
 
 1. Identify local style conventions from nearby code.
 2. Compare against repo-wide documented conventions.
-3. Find concrete deviations with evidence.
+3. Find concrete deviations with evidence. For large diffs (more than 3 files), fan out **fast-tier** readers — one per file or logical area — to surface candidate findings. Verify each before reporting.
 4. Report findings ordered by severity.
 
 ## Output

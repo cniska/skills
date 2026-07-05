@@ -13,7 +13,7 @@ Have a design conversation about this task. Read the relevant code, share what y
 
 If a question can be answered by reading the code, read the code instead of asking.
 
-Ground every recommendation in current code, docs, and project rules.
+Ground every recommendation in current code, docs, and project rules. For non-trivial context gathering, spawn **fast-tier** readers in parallel — one per relevant file or doc — and synthesize from their summaries. The synthesis pass itself benefits from a **powerful-tier** model with high reasoning effort.
 
 ## Task sizing
 

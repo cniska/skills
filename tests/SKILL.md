@@ -5,7 +5,7 @@ description: Review test coverage, quality, and missing edge cases. Use when rev
 
 # Tests
 
-Review test adequacy for changed code.
+Review test adequacy for changed code. For large changes spanning many files or test suites, fan out **fast-tier** readers per logical area — one per package or suite — each returning gap candidates. Synthesize and filter in this session.
 
 ## Scope
 

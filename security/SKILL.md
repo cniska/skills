@@ -54,7 +54,7 @@ Only report findings with a concrete attack path, trust-boundary failure, or uns
 
 1. Map entry points and trust boundaries.
 2. Classify each: local-only, authenticated, remote-accessible, privileged.
-3. Check validation, authorization, safe defaults at each boundary.
+3. Check validation, authorization, safe defaults at each boundary. For large audits, fan out **fast-tier** readers — one per boundary or subsystem — to collect raw candidates. Verify each against the code before reporting.
 4. Identify exploitable paths (read, write, execute, network, persist).
 5. Report findings by severity: critical → high → medium → low.
 

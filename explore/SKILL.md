@@ -7,11 +7,9 @@ description: Explore a task or design through systematic questions until reachin
 
 Explore a task or design through systematic questions until reaching shared understanding.
 
-If an issue number is given, fetch it with `gh issue view $ARGUMENTS` and use it as the starting point.
+Before asking, read — spawn **fast-tier** readers in parallel for the relevant files, issue, or ticket. Use their summaries to answer what the code already tells you. Only ask what the code can't answer.
 
-Ask me questions one at a time about this task until we have a shared understanding of what to build. Walk through each decision branch, resolving dependencies in order. For each question, provide your recommended answer based on the codebase.
-
-If a question can be answered by reading the code, read the code instead of asking.
+Ask one question at a time. Walk through decision branches in dependency order. For each question, give your recommended answer based on what you've read.
 
 ## See also
 

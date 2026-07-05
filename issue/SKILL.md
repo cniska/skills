@@ -16,6 +16,7 @@ Create a GitHub issue from a short description.
 - Write plainly — no code blocks, no bullet-heavy lists, no implementation detail
 - Focus on *what* and *why*, not *how* — leave implementation to the branch
 - Scope section uses a flat bullet list of affected areas
+- Self-contained: the issue must stand alone for anyone reading the repo. No links to private or local docs (e.g. a planning file) and no internal shorthand (`P1`, `RC4`, `C2`) — spell the point out or drop it
 
 ## Workflow
 
@@ -36,6 +37,7 @@ Create a GitHub issue from a short description.
 
 ## Red flags
 
+- Referencing internal shorthand or a local doc a repo reader can't resolve
 - Creating the issue without checking for duplicates
 - Writing implementation plans in the issue body
 - Adding too many sections or subsections

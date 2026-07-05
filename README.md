@@ -54,25 +54,35 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 
 | Phase | Skill | Description |
 |-------|-------|------------|
-| **Plan** | explore | Clarify requirements through systematic questions |
-| | plan | Design through dialogue, slice vertically |
-| | design | Hard-to-misuse interfaces, contract first, validate at boundaries |
-| **Build** | build | Vertical slices — implement, verify, commit, repeat |
-| | tdd | Red-green-refactor, mock at boundaries |
-| | sdd | Source-driven development: verify library and API behavior in primary sources |
-| | debug | Stop the line, reproduce, fix root cause, guard with test |
-| | simplify | Reduce complexity, Chesterton's Fence, preserve behavior |
-| | git | Atomic commits, clean history, rewrite before pushing |
-| | deprecation | Build replacement first, migrate consumers, remove completely |
-| **Review** | review | Run all review dimensions, severity labels, fix-all policy |
-| | style | Local conventions, naming, control flow, readability |
-| | architecture | Boundaries, indirection pressure, contract integrity |
-| | security | Trust boundaries, execution safety, concrete attack paths only |
-| | tests | Coverage gaps, edge cases, test quality |
-| | docs | Drift detection, terminology, outdated names |
-| **Meta** | issue | File a GitHub issue — check duplicates, draft, get approval |
-| | pr | Verify, review, then open the pull request |
-| | handoff | Summarize the session and reset context to save costs |
+| **Plan** | [explore](explore/SKILL.md) | Clarify requirements through systematic questions |
+| | [plan](plan/SKILL.md) | Design through dialogue, slice vertically |
+| | [design](design/SKILL.md) | Hard-to-misuse interfaces, contract first, validate at boundaries |
+| **Build** | [build](build/SKILL.md) | Vertical slices — implement, verify, commit, repeat |
+| | [tdd](tdd/SKILL.md) | Red-green-refactor, mock at boundaries |
+| | [sdd](sdd/SKILL.md) | Verify library and API behavior in primary sources before implementing |
+| | [debug](debug/SKILL.md) | Stop the line, reproduce, fix root cause, guard with test |
+| | [simplify](simplify/SKILL.md) | Reduce complexity, Chesterton's Fence, preserve behavior |
+| | [git](git/SKILL.md) | Conventional commits, rebase to sync, squash to land |
+| | [deprecation](deprecation/SKILL.md) | Build replacement first, migrate consumers, remove completely |
+| **Review** | [review](review/SKILL.md) | All review dimensions — self, PR, or path mode |
+| | [style](style/SKILL.md) | Local conventions, naming, control flow, readability |
+| | [architecture](architecture/SKILL.md) | Boundaries, indirection pressure, contract integrity |
+| | [security](security/SKILL.md) | Trust boundaries, execution safety, concrete attack paths only |
+| | [tests](tests/SKILL.md) | Coverage gaps, edge cases, test quality |
+| | [docs](docs/SKILL.md) | Drift detection, terminology, outdated names |
+| **Meta** | [issue](issue/SKILL.md) | File a GitHub issue — check duplicates, draft, get approval |
+| | [pr](pr/SKILL.md) | Self-review gated PR create or description update |
+| | [handoff](handoff/SKILL.md) | Checkpoint what survives a context boundary |
+
+## Model tiers
+
+Skills reference three capability tiers instead of provider-specific model names. Map them to whatever you're running:
+
+| Tier | Role | Examples |
+|------|------|---------|
+| `fast` | Parallel reads, cheap context gathering | Haiku, GPT-4o-mini, Gemini Flash |
+| `standard` | Default session model | Sonnet, GPT-4o, Gemini Pro |
+| `powerful` | Synthesis, high-stakes analysis, high reasoning effort | Opus, o1, Gemini Ultra |
 
 ## Principles
 
