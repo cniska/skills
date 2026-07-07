@@ -55,6 +55,7 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 | Phase | Skill | Description |
 |-------|-------|------------|
 | **Plan** | [explore](explore/SKILL.md) | Clarify requirements through systematic questions |
+| | [spec](spec/SKILL.md) | State what to build, not how; labelled, traceable requirements |
 | | [plan](plan/SKILL.md) | Design through dialogue, slice vertically |
 | | [design](design/SKILL.md) | Hard-to-misuse interfaces, contract first, validate at boundaries |
 | **Build** | [build](build/SKILL.md) | Vertical slices — implement, verify, commit, repeat |
