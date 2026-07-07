@@ -71,7 +71,8 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 | | [security](security/SKILL.md) | Trust boundaries, execution safety, concrete attack paths only |
 | | [tests](tests/SKILL.md) | Coverage gaps, edge cases, test quality |
 | | [docs](docs/SKILL.md) | Drift detection, terminology, outdated names |
-| **Meta** | [issue](issue/SKILL.md) | File a GitHub issue — check duplicates, draft, get approval |
+| **Meta** | [agents-md](agents-md/SKILL.md) | Create or update AGENTS.md project rules |
+| | [issue](issue/SKILL.md) | File a GitHub issue — check duplicates, draft, get approval |
 | | [pr](pr/SKILL.md) | Self-review gated PR create or description update |
 | | [handoff](handoff/SKILL.md) | Checkpoint what survives a context boundary |
 
