@@ -20,17 +20,19 @@ When a rule belongs in AGENTS.md, put it there — don't scatter the same rule a
 - Never hard-wrap markdown — one line per bullet or paragraph, let it soft-wrap.
 - State the rule, not its history — "no X" beats "we used to allow X but now".
 - Reuse the existing file's vocabulary — don't coin a synonym for a concept already named.
-- Keep it lean — prefer trimming to growing. A new rule shouldn't grow the file if an existing bullet can absorb it.
+- Keep it lean — prefer trimming to growing. A new rule shouldn't grow the file if an existing bullet can absorb it. Target under 80 lines; AGENTS.md is loaded on every task and every line has a recurring token cost.
 - For any comment guidance it generates, take the self-documenting-code stance: comment the *why* that can't be encoded in a name, type, or test — never the *what*.
+- If a `SPEC.md` exists, the opening line must reference it as the source of truth for requirements. Invariants may cite spec IDs (e.g. `FR-15`) to make them traceable, but code, comments, and test names must not — describe behavior in plain terms; the spec is the reference for why.
 
 ## Standard sections
 
 Use only the sections with something concrete to say — an empty section is noise. Order them so the load-bearing rules come first:
 
-- **Architecture** — module boundaries, entry points, what depends on what.
+- **Architecture** — module boundaries, entry points, what depends on what. Keep this section to a single reference line pointing to a dedicated architecture doc when one exists; suggest extracting and referencing when the section exceeds five bullets. AGENTS.md is loaded on every task — a long Architecture section belongs in a doc humans and agents can read on demand.
 - **Invariants** — rules that must never break; the non-negotiables.
 - **Workflow** — how to build, run, and verify locally.
 - **Commits** — message format and discipline (defer to the `git` skill's Conventional Commits unless the repo overrides).
+- **Pull requests** — when to open one, the review gate, title and body rules (omit if the project doesn't use PRs).
 - **Code** — language and structure rules specific to this repo.
 - **Style** — formatting, naming, lint/format tool of record.
 - **Docs** — where docs live and when to update them.
@@ -70,12 +72,18 @@ Concrete target behavior: adding a "comments" rule should absorb a pre-existing 
 
 ## See also
 
-- `git` for Conventional Commits format the Commits section defers to.
-- `docs` for keeping canonical docs in sync when rules change.
-- `update-config` for `settings.json` harness config — a different artifact.
+AGENTS.md is the hub that gives the other skills their project-specific grounding. Each skill reads it to understand what the project considers non-negotiable.
+
+- `spec` — if SPEC.md exists, reference it in the opening line; defer all requirement details there. Invariants cite spec IDs; code does not.
+- `git` — the Commits section defers to the `git` skill's Conventional Commits format unless the repo overrides it.
+- `tdd` — the Testing section describes the surface the `tdd` skill drives against: test layout, run command, boundary mocking policy.
+- `review` / `code-review` — the Invariants section is the checklist these skills verify. An invariant with no test and no review coverage is incomplete.
+- `doc-review` — the Docs section states when to update canonical docs; the `doc-review` skill enforces it.
+- `update-config` — `settings.json` harness config belongs there, not here.
 
 ## Red flags
 
+- Letting the Architecture section grow to more than five bullets instead of suggesting extraction to a dedicated architecture doc.
 - Blind-appending a new rule instead of merging it with the overlapping bullet.
 - Hard-wrapping bullets to a column width.
 - Inventing rules the codebase doesn't actually follow.
