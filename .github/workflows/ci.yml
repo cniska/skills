@@ -17,7 +17,9 @@ jobs:
         run: ./scripts/validate.sh
 
       - name: Lint bash
-        run: make lint
+        run: |
+          shellcheck --version  # fail loudly if the runner ever drops shellcheck
+          make lint
 
       - name: Test bash
         run: make test
