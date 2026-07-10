@@ -45,7 +45,7 @@ Rules:
 - `explore` — resolve ambiguity before drafting
 - `plan` — design and decompose once the spec is stable
 - `sdd` — confirm the external API and library constraints the spec relies on
-- `architecture`, `docs` — where the *how* lives, and keeping the spec free of drift
+- `architecture-review`, `doc-review` — where the *how* lives, and keeping the spec free of drift
 - [`template.md`](template.md) — the canonical section skeleton to copy from
 
 ## Red flags

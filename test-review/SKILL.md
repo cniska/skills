@@ -1,5 +1,5 @@
 ---
-name: tests
+name: test-review
 description: Review test adequacy for changed code — meaningful gaps, quality problems, and unnecessary tests. Use when reviewing whether changed code has adequate tests.
 ---
 

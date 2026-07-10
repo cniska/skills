@@ -62,7 +62,7 @@ Two modes: **Create** (default) — push and open a PR; **Update** — rewrite a
 
 - `git` for commit conventions and rewriting history before push
 - `review` for severity and gating decisions
-- `docs` for user-facing drift checks before merge
+- `doc-review` for user-facing drift checks before merge
 - `sdd` when the change depends on version-specific APIs
 
 ## Red flags

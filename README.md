@@ -66,11 +66,11 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 | | [git](git/SKILL.md) | Conventional commits, rebase to sync, squash to land |
 | | [deprecation](deprecation/SKILL.md) | Build replacement first, migrate consumers, remove completely |
 | **Review** | [review](review/SKILL.md) | All review dimensions — self, PR, or path mode |
-| | [style](style/SKILL.md) | Local conventions, naming, control flow, readability |
-| | [architecture](architecture/SKILL.md) | Boundaries, indirection pressure, contract integrity |
-| | [security](security/SKILL.md) | Trust boundaries, execution safety, concrete attack paths only |
-| | [tests](tests/SKILL.md) | Coverage gaps, edge cases, test quality |
-| | [docs](docs/SKILL.md) | Drift detection, terminology, outdated names |
+| | [style-review](style-review/SKILL.md) | Local conventions, naming, control flow, readability |
+| | [architecture-review](architecture-review/SKILL.md) | Boundaries, indirection pressure, contract integrity |
+| | [security-review](security-review/SKILL.md) | Trust boundaries, execution safety, concrete attack paths only |
+| | [test-review](test-review/SKILL.md) | Coverage gaps, edge cases, test quality |
+| | [doc-review](doc-review/SKILL.md) | Drift detection, terminology, outdated names |
 | **Meta** | [agents-md](agents-md/SKILL.md) | Create or update AGENTS.md project rules |
 | | [issue](issue/SKILL.md) | File a GitHub issue — check duplicates, draft, get approval |
 | | [pr](pr/SKILL.md) | Self-review gated PR create or description update |
@@ -92,13 +92,13 @@ Skills reference three capability tiers instead of provider-specific model names
 |-----------|------------|--------|
 | Vertical slices | One complete path through the stack at a time | build, plan |
 | Contract first | Schema before implementation | design, build |
-| SRP | One responsibility per module, one change per commit | architecture, build, git |
-| YAGNI | Don't build for hypothetical requirements | architecture, design |
+| SRP | One responsibility per module, one change per commit | architecture-review, build, git |
+| YAGNI | Don't build for hypothetical requirements | architecture-review, design |
 | Stop the line | Something breaks — stop, don't push past it | debug |
 | Prove-It pattern | Failing test before fix | debug, tdd |
-| Mock at boundaries | Mock external systems, not internal functions | tdd, tests |
+| Mock at boundaries | Mock external systems, not internal functions | tdd, test-review |
 | DAMP over DRY | Descriptive tests over deduplicated tests | tdd |
-| Rule of 3 | Extract after three instances, not before | simplify, style |
+| Rule of 3 | Extract after three instances, not before | simplify, style-review |
 | Chesterton's Fence | Understand before removing | simplify |
 | Hyrum's Law | All observable behavior becomes a commitment | design, deprecation |
 | Code as liability | Less code serving the same purpose is better | deprecation |

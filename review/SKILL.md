@@ -35,7 +35,7 @@ Refactoring mixed with feature work is two changes. Flag it.
 3. **Get an independent second opinion first.** Spawn a fresh `general-purpose` subagent to review the diff independently — it isn't anchored to the author's mental model. Give it the diff, intent, and specific failure modes to probe. Ask for concrete findings with evidence only. Run on the session model, not a cheaper tier.
 4. Read changed files in full, plus any project-level convention docs. **Review tests first** — they reveal intent and coverage gaps.
 5. **For large diffs** (more than 3 files), fan out **fast-tier** sub-agents — one per logical area — to surface candidate findings. Verify each before including it.
-6. Run the five dimension passes in this session — load each skill (`style`, `architecture`, `docs`, `security`, `tests`) and apply its criteria to the diff, one pass per dimension. If a skill fails to load, say so in that category's output rather than improvising.
+6. Run the five dimension passes in this session — load each skill (`style-review`, `architecture-review`, `doc-review`, `security-review`, `test-review`) and apply its criteria to the diff, one pass per dimension. If a skill fails to load, say so in that category's output rather than improvising.
 7. Fold in the second opinion's findings. Verify each; discard false positives.
 8. Merge findings: deduplicate, keep strongest framing per root issue.
 9. Label every finding by severity (see below). Fix all findings by default — commit each fix as its own subject-scoped commit.
@@ -96,7 +96,7 @@ One section per review dimension (Style, Architecture, Documentation, Security, 
 
 ## See also
 
-- `style`, `architecture`, `docs`, `security`, `tests` for dimension-specific depth
+- `style-review`, `architecture-review`, `doc-review`, `security-review`, `test-review` for dimension-specific depth
 
 ## Red flags
 

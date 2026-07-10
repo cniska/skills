@@ -37,7 +37,7 @@ Mock at system boundaries (database, network, file system, external APIs), not b
 ## See also
 
 - `build` for slice-by-slice execution
-- `tests` for review-time test adequacy checks
+- `test-review` for review-time test adequacy checks
 
 ## Red flags
 
