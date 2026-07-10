@@ -16,8 +16,8 @@ eval: ## Run behavioral evals (calls claude -p; costs tokens). Pass ARGS="--base
 test: ## Run bash tests (offline, no API)
 	@for t in $$(find . -name '*.test.sh' -not -path './node_modules/*' | sort); do echo "== $$t =="; bash "$$t" || exit 1; done
 
-lint: ## Shellcheck all shell scripts
-	shellcheck $$(find . -name '*.sh' -not -path './node_modules/*')
+lint: ## Shellcheck shell scripts (optional locally; auto-skips if not installed)
+	@command -v shellcheck >/dev/null 2>&1 || { echo "shellcheck not installed — run 'brew install shellcheck' to lint locally"; exit 0; }; shellcheck $$(find . -name '*.sh' -not -path './node_modules/*')
 
 new-skill: ## Create a new skill (usage: make new-skill NAME=my-skill DESC="Implement ...")
 	@if [ -z "$(NAME)" ] || [ -z "$(DESC)" ]; then \
