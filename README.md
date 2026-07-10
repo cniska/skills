@@ -126,9 +126,7 @@ make validate
 
 `make validate` runs [`./scripts/validate.sh`](scripts/validate.sh); `make lint` runs `shellcheck` over the shell scripts, and `make test` runs their bash unit tests.
 
-CI runs all three — validate, lint, test — on pull requests and pushes to `main` via [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
-
-CI also validates commit messages on pull requests via [`.github/workflows/commit-messages.yml`](.github/workflows/commit-messages.yml).
+CI runs all three — validate, lint, test — on pull requests and pushes to `main` via [`.github/workflows/ci.yml`](.github/workflows/ci.yml). Commit messages are enforced locally by the pre-push hook (see Local setup).
 
 ## Create a new skill
 
