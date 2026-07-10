@@ -9,7 +9,7 @@ Commits are save points, branches are sandboxes, history is documentation. Treat
 
 ## Commit messages
 
-[Conventional Commits](https://www.conventionalcommits.org/) — `type(scope): subject`. Types: `feat`, `fix`, `refactor`, `chore`, `docs`, `test`, `build`, `ci`, `perf`. Single-line subject, target under 50 characters. Do not put issue references or links in the subject (`(#123)`, `Fixes #123`) — those belong in the PR body. Defer to the repo's `AGENTS.md` or contributing guide if it overrides this.
+[Conventional Commits](https://www.conventionalcommits.org/) — `type(scope): subject`. Types: `feat`, `fix`, `refactor`, `chore`, `docs`, `test`, `build`, `ci`, `perf`. Single-line subject, aim under 50 characters and never over 72. Do not put issue references or links in the subject (`(#123)`, `Fixes #123`) — those belong in the PR body. Defer to the repo's `AGENTS.md` or contributing guide if it overrides this.
 
 ## Commit discipline
 
