@@ -92,7 +92,16 @@ Every dependency is a liability.
 
 ## Output
 
-One section per review dimension (Correctness, Style, Architecture, Documentation, Security, Tests), then a summary table: `category | critical | fix | optional`. Note categories with no findings.
+One section per review dimension (Correctness, Style, Architecture, Documentation, Security, Tests), noting dimensions with no findings. Always end with this summary table — one row per dimension, counts of findings per severity (Consider and Nit both count as Optional):
+
+| Category | Critical | Fix | Optional |
+|----------|----------|-----|----------|
+| Correctness | 0 | 0 | 0 |
+| Style | 0 | 0 | 0 |
+| Architecture | 0 | 0 | 0 |
+| Documentation | 0 | 0 | 0 |
+| Security | 0 | 0 | 0 |
+| Tests | 0 | 0 | 0 |
 
 ## See also
 
