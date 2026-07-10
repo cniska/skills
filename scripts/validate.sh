@@ -72,11 +72,7 @@ while IFS= read -r -d '' skill_dir; do
     status=1
   fi
 
-done < <(find "$ROOT_DIR" -mindepth 1 -maxdepth 1 -type d \
-  ! -name '.*' \
-  ! -name 'scripts' \
-  ! -name 'evals' \
-  -print0)
+done < <(find "$ROOT_DIR/skills" -mindepth 1 -maxdepth 1 -type d -print0)
 
 if [[ $status -eq 0 ]]; then
   echo "OK: skill validation passed"

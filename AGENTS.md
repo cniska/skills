@@ -1,6 +1,6 @@
 # Skills
 
-Each skill lives in `<name>/SKILL.md` with YAML frontmatter (`name` and `description`).
+Each skill lives in `skills/<name>/SKILL.md` with YAML frontmatter (`name` and `description`).
 
 Descriptions start with an imperative verb. Use "Red flags" not "Anti-patterns" for the warning section.
 

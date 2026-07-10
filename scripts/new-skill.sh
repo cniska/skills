@@ -26,7 +26,7 @@ if [[ ! "$skill_name" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
   exit 1
 fi
 
-skill_dir="$ROOT_DIR/$skill_name"
+skill_dir="$ROOT_DIR/skills/$skill_name"
 skill_file="$skill_dir/SKILL.md"
 
 if [[ -e "$skill_dir" ]]; then

@@ -54,32 +54,32 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 
 | Phase | Skill | Description |
 |-------|-------|------------|
-| **Plan** | [spec](spec/SKILL.md) | State what to build, not how; labelled, traceable requirements |
-| | [plan](plan/SKILL.md) | Design through dialogue, slice vertically |
-| | [design](design/SKILL.md) | Hard-to-misuse interfaces, contract first, validate at boundaries |
-| **Build** | [build](build/SKILL.md) | Vertical slices — implement, verify, commit, repeat |
-| | [tdd](tdd/SKILL.md) | Red-green-refactor, mock at boundaries |
-| | [debug](debug/SKILL.md) | Stop the line, reproduce, fix root cause, guard with test |
-| | [simplify](simplify/SKILL.md) | Reduce complexity, Chesterton's Fence, preserve behavior |
-| | [git](git/SKILL.md) | Conventional commits, rebase to sync, squash to land |
-| | [deprecation](deprecation/SKILL.md) | Build replacement first, migrate consumers, remove completely |
-| **Review** | [review](review/SKILL.md) | All review dimensions — self, PR, or path mode |
-| | [correctness-review](correctness-review/SKILL.md) | Logic bugs, edge cases, broken contracts |
-| | [style-review](style-review/SKILL.md) | Local conventions, naming, control flow, readability |
-| | [architecture-review](architecture-review/SKILL.md) | Boundaries, indirection pressure, contract integrity |
-| | [security-review](security-review/SKILL.md) | Trust boundaries, execution safety, concrete attack paths only |
-| | [test-review](test-review/SKILL.md) | Coverage gaps, edge cases, test quality |
-| | [doc-review](doc-review/SKILL.md) | Drift detection, terminology, outdated names |
-| **Meta** | [agents-md](agents-md/SKILL.md) | Create or update AGENTS.md project rules |
-| | [issue](issue/SKILL.md) | File a GitHub issue — check duplicates, draft, get approval |
-| | [pr](pr/SKILL.md) | Self-review gated PR create or description update |
-| | [handoff](handoff/SKILL.md) | Brief the next session on the next move, then reset context |
+| **Plan** | [spec](skills/spec/SKILL.md) | State what to build, not how; labelled, traceable requirements |
+| | [plan](skills/plan/SKILL.md) | Design through dialogue, slice vertically |
+| | [design](skills/design/SKILL.md) | Hard-to-misuse interfaces, contract first, validate at boundaries |
+| **Build** | [build](skills/build/SKILL.md) | Vertical slices — implement, verify, commit, repeat |
+| | [tdd](skills/tdd/SKILL.md) | Red-green-refactor, mock at boundaries |
+| | [debug](skills/debug/SKILL.md) | Stop the line, reproduce, fix root cause, guard with test |
+| | [simplify](skills/simplify/SKILL.md) | Reduce complexity, Chesterton's Fence, preserve behavior |
+| | [git](skills/git/SKILL.md) | Conventional commits, rebase to sync, squash to land |
+| | [deprecation](skills/deprecation/SKILL.md) | Build replacement first, migrate consumers, remove completely |
+| **Review** | [review](skills/review/SKILL.md) | All review dimensions — self, PR, or path mode |
+| | [correctness-review](skills/correctness-review/SKILL.md) | Logic bugs, edge cases, broken contracts |
+| | [style-review](skills/style-review/SKILL.md) | Local conventions, naming, control flow, readability |
+| | [architecture-review](skills/architecture-review/SKILL.md) | Boundaries, indirection pressure, contract integrity |
+| | [security-review](skills/security-review/SKILL.md) | Trust boundaries, execution safety, concrete attack paths only |
+| | [test-review](skills/test-review/SKILL.md) | Coverage gaps, edge cases, test quality |
+| | [doc-review](skills/doc-review/SKILL.md) | Drift detection, terminology, outdated names |
+| **Meta** | [agents-md](skills/agents-md/SKILL.md) | Create or update AGENTS.md project rules |
+| | [issue](skills/issue/SKILL.md) | File a GitHub issue — check duplicates, draft, get approval |
+| | [pr](skills/pr/SKILL.md) | Self-review gated PR create or description update |
+| | [handoff](skills/handoff/SKILL.md) | Brief the next session on the next move, then reset context |
 
 ## Design
 
-Each skill is one self-contained file — `<name>/SKILL.md`, with YAML frontmatter (`name` matching the directory, `description` starting with an imperative verb) and a terse Markdown body. A few conventions hold across the set:
+Each skill is one self-contained file — `skills/<name>/SKILL.md`, with YAML frontmatter (`name` matching the directory, `description` starting with an imperative verb) and a terse Markdown body. A few conventions hold across the set:
 
-- **Self-contained.** A skill depends on nothing outside its own directory — `npx skills add` copies only `<name>/`, so shared or repo-root files never ship. Guidance is inlined, not linked out.
+- **Self-contained.** A skill depends on nothing outside its own directory — `npx skills add` copies only that skill's directory, so shared or repo-root files never ship. Guidance is inlined, not linked out.
 - **Compose by name.** Skills reference each other by name in `## See also` (`build`, `review`, …), never by path — no cross-directory links to break.
 - **Terse and imperative.** Intent, workflow, and a `## Red flags` section of failure modes. No filler.
 - **Provider-neutral.** Skills name capability tiers (`fast` / `standard` / `powerful`), not specific models — see below.
