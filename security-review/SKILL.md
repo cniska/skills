@@ -3,7 +3,7 @@ name: security-review
 description: Review security risks, trust boundaries, and unsafe defaults — concrete attack paths only. Use when reviewing security posture or assessing risk before release.
 ---
 
-# Security
+# Security Review
 
 Review the diff for exploitable security failures. Report only findings with a concrete attack path, trust-boundary failure, or unsafe default — the Scope buckets below are where attack paths hide, not a checklist to sweep.
 

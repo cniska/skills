@@ -3,7 +3,7 @@ name: test-review
 description: Review test adequacy for changed code — meaningful gaps, quality problems, and unnecessary tests. Use when reviewing whether changed code has adequate tests.
 ---
 
-# Tests
+# Test Review
 
 Review test adequacy for changed code. For large changes spanning many files or test suites, fan out **fast-tier** readers per logical area — one per package or suite — each returning gap candidates. Synthesize and filter in this session.
 

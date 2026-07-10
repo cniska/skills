@@ -3,7 +3,7 @@ name: style-review
 description: Review code style, naming, patterns, and consistency. Use when reviewing code quality or style drift.
 ---
 
-# Style
+# Style Review
 
 Review naming, coding patterns, and style consistency against the codebase's existing conventions.
 
