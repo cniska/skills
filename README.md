@@ -124,9 +124,9 @@ Run the validator before publishing changes:
 make validate
 ```
 
-`make validate` is the supported command. It runs [`./scripts/validate.sh`](scripts/validate.sh) under the hood.
+`make validate` runs [`./scripts/validate.sh`](scripts/validate.sh); `make lint` runs `shellcheck` over the shell scripts, and `make test` runs their bash unit tests.
 
-CI runs the same validation on pull requests and pushes to `main` via [`.github/workflows/validate.yml`](.github/workflows/validate.yml).
+CI runs all three — validate, lint, test — on pull requests and pushes to `main` via [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
 
 CI also validates commit messages on pull requests via [`.github/workflows/commit-messages.yml`](.github/workflows/commit-messages.yml).
 
