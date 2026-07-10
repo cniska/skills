@@ -1,11 +1,11 @@
 ---
 name: security
-description: Review security risks, trust boundaries, and unsafe defaults. Use when reviewing security posture or assessing risk before release.
+description: Review security risks, trust boundaries, and unsafe defaults — concrete attack paths only. Use when reviewing security posture or assessing risk before release.
 ---
 
 # Security
 
-Review security posture, trust boundaries, and unsafe defaults.
+Review the diff for exploitable security failures. Report only findings with a concrete attack path, trust-boundary failure, or unsafe default — the Scope buckets below are where attack paths hide, not a checklist to sweep.
 
 ## Scope
 
@@ -52,7 +52,7 @@ Only report findings with a concrete attack path, trust-boundary failure, or uns
 
 ## Workflow
 
-1. Map entry points and trust boundaries.
+1. Map entry points and trust boundaries in the diff; flag pre-existing code only where the change newly makes it reachable.
 2. Classify each: local-only, authenticated, remote-accessible, privileged.
 3. Check validation, authorization, safe defaults at each boundary. For large audits, fan out **fast-tier** readers — one per boundary or subsystem — to collect raw candidates. Verify each against the code before reporting.
 4. Identify exploitable paths (read, write, execute, network, persist).
@@ -60,9 +60,12 @@ Only report findings with a concrete attack path, trust-boundary failure, or uns
 
 ## Output
 
-For each finding: **severity**, **affected files**, **attack/failure path**, **why risky**, **fix**, **test idea**.
+For each finding: **label** (Critical / Fix / Consider / Nit — see `review`), **affected files**, **attack/failure path** (who can reach it), **why risky**, **fix**, **test idea**. Severity follows reachability: Critical = reachable by remote unauthenticated input; Fix = authenticated or same-network; Consider/Nit = requires local access or defense-in-depth.
 
-Then: **Confirmed findings** | **Open questions** | **Optional hardening**.
+- Reject: "The WebSocket uses WS not WSS — should be encrypted." (no reachable attack path)
+- Report: **Critical** — `server.ts:42` binds `0.0.0.0` with `auth:false` by default; any LAN host can call `/exec` and run shell commands (unauthenticated network → execute).
+
+Group as **Confirmed findings** | **Open questions** | **Optional hardening** (max 3, one line each, only where an abuse path is plausible; omit if empty). "No security findings" is a valid result.
 
 ## See also
 
