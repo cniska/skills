@@ -64,6 +64,7 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 | | [git](git/SKILL.md) | Conventional commits, rebase to sync, squash to land |
 | | [deprecation](deprecation/SKILL.md) | Build replacement first, migrate consumers, remove completely |
 | **Review** | [review](review/SKILL.md) | All review dimensions — self, PR, or path mode |
+| | [correctness-review](correctness-review/SKILL.md) | Logic bugs, edge cases, broken contracts |
 | | [style-review](style-review/SKILL.md) | Local conventions, naming, control flow, readability |
 | | [architecture-review](architecture-review/SKILL.md) | Boundaries, indirection pressure, contract integrity |
 | | [security-review](security-review/SKILL.md) | Trust boundaries, execution safety, concrete attack paths only |

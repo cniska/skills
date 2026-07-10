@@ -35,7 +35,7 @@ Refactoring mixed with feature work is two changes. Flag it.
 3. **Get an independent second opinion first.** Spawn a fresh `general-purpose` subagent to review the diff independently — it isn't anchored to the author's mental model. Give it the diff, intent, and specific failure modes to probe. Ask for concrete findings with evidence only. Run on the session model, not a cheaper tier.
 4. Read changed files in full, plus any project-level convention docs. **Review tests first** — they reveal intent and coverage gaps.
 5. **For large diffs** (more than 3 files), fan out **fast-tier** sub-agents — one per logical area — to surface candidate findings. Verify each before including it.
-6. Run the five dimension passes in this session — load each skill (`style-review`, `architecture-review`, `doc-review`, `security-review`, `test-review`) and apply its criteria to the diff, one pass per dimension. If a skill fails to load, say so in that category's output rather than improvising.
+6. Run the six dimension passes in this session — load each skill (`correctness-review`, `style-review`, `architecture-review`, `doc-review`, `security-review`, `test-review`) and apply its criteria to the diff, one pass per dimension. If a skill fails to load, say so in that category's output rather than improvising.
 7. Fold in the second opinion's findings. Verify each; discard false positives.
 8. Merge findings: deduplicate, keep strongest framing per root issue.
 9. Label every finding by severity (see below). Fix all findings by default — commit each fix as its own subject-scoped commit.
@@ -44,13 +44,13 @@ Refactoring mixed with feature work is two changes. Flag it.
 
 1. `gh pr view <N>` for metadata; `gh pr diff <N>` for the diff. Read repo conventions — `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`.
 2. For large PRs (more than 3 files), fan out **fast-tier** sub-agents per logical area. Verify findings yourself.
-3. Run the five dimension passes (as in Self step 6). Filter relentlessly — only findings with evidence.
+3. Run the six dimension passes (as in Self step 6). Filter relentlessly — only findings with evidence.
 
 ### Path (file or directory)
 
 1. Enumerate files; skip generated content, lockfiles, `node_modules/`.
 2. For large paths, fan out **fast-tier** sub-agents per file or logical area.
-3. Read conventions. Run the five dimension passes (as in Self step 6) over the full files.
+3. Read conventions. Run the six dimension passes (as in Self step 6) over the full files.
 
 ## Severity
 
@@ -92,11 +92,11 @@ Every dependency is a liability.
 
 ## Output
 
-One section per review dimension (Style, Architecture, Documentation, Security, Tests), then a summary table: `category | critical | fix | optional`. Note categories with no findings.
+One section per review dimension (Correctness, Style, Architecture, Documentation, Security, Tests), then a summary table: `category | critical | fix | optional`. Note categories with no findings.
 
 ## See also
 
-- `style-review`, `architecture-review`, `doc-review`, `security-review`, `test-review` for dimension-specific depth
+- `correctness-review`, `style-review`, `architecture-review`, `doc-review`, `security-review`, `test-review` for dimension-specific depth
 
 ## Red flags
 
