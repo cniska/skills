@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 status=0
 
 # Allowed first words for imperative descriptions used in this repo.
-readonly IMPERATIVE_VERBS='implement|review|debug|deprecate|design|manage|create|run|simplify|drive|ground|summarize|write'
+readonly IMPERATIVE_VERBS='implement|review|debug|deprecate|design|manage|create|run|simplify|drive|write'
 
 if command -v rg >/dev/null 2>&1; then
   has_red_flags() { rg -q '^## Red flags$' "$1"; }
