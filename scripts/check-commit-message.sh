@@ -6,7 +6,7 @@ set -euo pipefail
 #
 # Rules:
 #   - Conventional Commit format: type(scope): description
-#   - Allowed types: feat, fix, refactor, docs, test, chore
+#   - Allowed types: feat, fix, refactor, docs, test, chore, build, ci, perf
 #   - Single-line subject, no body
 #   - Under 72 characters
 #   - ASCII only
@@ -19,7 +19,7 @@ if [ -z "$subject" ]; then
   exit 2
 fi
 
-cc_re='^(feat|fix|refactor|docs|test|chore)(\([a-z0-9-]+\))?!?: .+'
+cc_re='^(feat|fix|refactor|docs|test|chore|build|ci|perf)(\([a-z0-9-]+\))?!?: .+'
 
 if [ -n "$body" ]; then
   echo "error: commit has a body. Commits must be single-line subject only." >&2
