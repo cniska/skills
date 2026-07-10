@@ -32,7 +32,7 @@ Rules:
 
 ## Workflow
 
-1. **Gather intent.** For a new spec, read the reference the user points to and the conversation so far; for an edit, read the current spec in full. Resolve remaining ambiguity with `explore`, one question at a time, instead of guessing.
+1. **Gather intent.** For a new spec, read the reference the user points to and the conversation so far; for an edit, read the current spec in full. Resolve remaining ambiguity by asking one question at a time, each with your recommended answer, instead of guessing.
 2. **Cross-check against code** (when it exists). Every shipped behavior needs a requirement; every requirement needs a way to verify it. Enumerate the real surface from the source, not from memory: CLI flags, config format, error paths. A requirement the code contradicts is stale. Reconcile it.
 3. **Draft from the template.** Fill the section skeleton in [`template.md`](template.md), assigning IDs as you go. Done when every section is filled or explicitly marked not-applicable.
 4. **Sort what from how.** Any sentence naming an algorithm, a request shape, or an offset is *how*. Move it to the architecture doc and leave the requirement stating only the observable outcome. Fixed stack choices stay, but under Constraints as decisions, not as mechanism.
@@ -42,7 +42,6 @@ Rules:
 
 ## See also
 
-- `explore` — resolve ambiguity before drafting
 - `plan` — design and decompose once the spec is stable
 - `sdd` — confirm the external API and library constraints the spec relies on
 - `architecture-review`, `doc-review` — where the *how* lives, and keeping the spec free of drift

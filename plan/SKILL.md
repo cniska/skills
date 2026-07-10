@@ -11,7 +11,7 @@ If an issue number is given, fetch it with `gh issue view $ARGUMENTS` and use it
 
 Have a design conversation about this task. Read the relevant code, share what you find, say what you think, and let the user shape the direction. The plan emerges from the dialogue — do not build it in isolation.
 
-If a question can be answered by reading the code, read the code instead of asking.
+If a question can be answered by reading the code, read the code instead of asking. When scope is genuinely ambiguous, resolve it before drafting: ask one question at a time, in dependency order, each with your recommended answer — and only ask what the code can't tell you.
 
 Ground every recommendation in current code, docs, and project rules. For non-trivial context gathering, spawn a few **fast-tier** readers in parallel (cap ~5; one per load-bearing file), then bring what you found back to the user before drafting — the read-back is a conversation turn, not a silent research phase.
 
@@ -35,7 +35,6 @@ For non-trivial plans, track agreed steps in a checklist as the conversation pro
 
 ## See also
 
-- `explore` for pre-planning discovery
 - `build` for execution discipline per slice
 - `sdd` when plan decisions depend on external APIs or libraries
 
