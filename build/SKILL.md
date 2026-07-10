@@ -5,7 +5,7 @@ description: Implement features incrementally through vertical slices. Use when 
 
 # Build
 
-Build in thin vertical slices. Implement one piece, verify it, commit it, then move on. Never accumulate uncommitted work across multiple files.
+Build in thin vertical slices. Implement one piece, verify it, commit it, then move on. Never accumulate uncommitted work across multiple slices.
 
 ## Workflow
 
@@ -23,6 +23,8 @@ Before the first slice, if not already on a dedicated branch, create one. Consid
 - **Vertical slice** — one complete path through the stack (type + implementation + test). Preferred default.
 - **Contract-first** — define the schema and types first, then implement consumers.
 - **Risk-first** — tackle the uncertain part first, then build the straightforward parts on top.
+
+A slice is one path, not one layer. Good: `POST /orders` endpoint + the form that calls it + one test. Bad: all endpoints, then all UI, then all tests.
 
 ## See also
 
