@@ -14,6 +14,8 @@ This configures the Git hooks path and runs full validation (`make validate`).
 
 ## Development loop
 
+Maintainers with push access commit directly to `main` (see `AGENTS.md`); outside contributors branch and open a PR.
+
 1. Create a branch from `main`.
 2. Make focused, slice-based changes.
 3. Run local validation while iterating:
