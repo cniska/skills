@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # Consumed by run.sh after sourcing:
 # shellcheck disable=SC2034
 #

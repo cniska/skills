@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Unit tests for run.sh — pure bash + jq, no API calls (claude_run is stubbed).
 # Run: ./run.test.sh   (exit 0 = all pass, 1 = failures)
+# Fixtures set vars and override claude_run for the sourced run.sh to consume:
+# shellcheck disable=SC2034,SC2154,SC2329
 set -u
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
