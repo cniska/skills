@@ -1,4 +1,4 @@
-.PHONY: help validate bootstrap new-skill
+.PHONY: help validate bootstrap new-skill eval test lint
 
 help: ## Show this help message
 	@echo "Available commands:"
@@ -9,6 +9,15 @@ validate: ## Validate skill format and conventions
 
 bootstrap: ## Configure local hooks and run validation
 	./scripts/bootstrap.sh
+
+eval: ## Run behavioral evals (calls claude -p; costs tokens). Pass ARGS="--baseline" etc.
+	./evals/run.sh $(ARGS)
+
+test: ## Run bash tests (offline, no API)
+	@for t in $$(find . -name '*.test.sh' -not -path './node_modules/*' | sort); do echo "== $$t =="; bash "$$t" || exit 1; done
+
+lint: ## Shellcheck all shell scripts
+	shellcheck $$(find . -name '*.sh' -not -path './node_modules/*')
 
 new-skill: ## Create a new skill (usage: make new-skill NAME=my-skill DESC="Implement ...")
 	@if [ -z "$(NAME)" ] || [ -z "$(DESC)" ]; then \

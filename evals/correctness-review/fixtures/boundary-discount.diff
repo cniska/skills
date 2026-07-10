@@ -1,0 +1,31 @@
+```diff
+diff --git a/src/pricing.ts b/src/pricing.ts
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/pricing.ts
++++ b/src/pricing.ts
+@@ -8,12 +8,21 @@ export interface Order {
+   items: LineItem[];
+ }
+
+-// TODO: apply the bulk discount once the tiers are finalized.
+-export function orderTotal(order: Order): number {
+-  const subtotal = order.items.reduce((sum, it) => sum + it.price * it.qty, 0);
+-  return subtotal;
+-}
++const BULK_THRESHOLD_EUR = 100;
++const BULK_RATE = 0.1;
++
++// Orders whose subtotal reaches the bulk threshold get BULK_RATE off.
++export function orderTotal(order: Order): number {
++  const subtotal = order.items.reduce((sum, it) => sum + it.price * it.qty, 0);
++  if (subtotal > BULK_THRESHOLD_EUR) {
++    return round2(subtotal * (1 - BULK_RATE));
++  }
++  return round2(subtotal);
++}
++
++// round to cents
++function round2(n: number): number {
++  return Math.round(n * 100) / 100;
++}
+```

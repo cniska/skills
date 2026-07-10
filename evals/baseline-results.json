@@ -1,0 +1,8 @@
+{
+  "correctness-review/boundary-discount": {
+    "severity-label": 100,
+    "contract-shape": 100,
+    "names-trigger": 100,
+    "no-style-as-bug": 100
+  }
+}

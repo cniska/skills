@@ -75,6 +75,7 @@ while IFS= read -r -d '' skill_dir; do
 done < <(find "$ROOT_DIR" -mindepth 1 -maxdepth 1 -type d \
   ! -name '.*' \
   ! -name 'scripts' \
+  ! -name 'evals' \
   -print0)
 
 if [[ $status -eq 0 ]]; then
