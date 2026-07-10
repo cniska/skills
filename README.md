@@ -59,7 +59,6 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 | | [design](design/SKILL.md) | Hard-to-misuse interfaces, contract first, validate at boundaries |
 | **Build** | [build](build/SKILL.md) | Vertical slices — implement, verify, commit, repeat |
 | | [tdd](tdd/SKILL.md) | Red-green-refactor, mock at boundaries |
-| | [sdd](sdd/SKILL.md) | Verify library and API behavior in primary sources before implementing |
 | | [debug](debug/SKILL.md) | Stop the line, reproduce, fix root cause, guard with test |
 | | [simplify](simplify/SKILL.md) | Reduce complexity, Chesterton's Fence, preserve behavior |
 | | [git](git/SKILL.md) | Conventional commits, rebase to sync, squash to land |
@@ -112,7 +111,7 @@ Skills reference three capability tiers instead of provider-specific model names
 | Chesterton's Fence | Understand before removing | simplify |
 | Hyrum's Law | All observable behavior becomes a commitment | design, deprecation |
 | Code as liability | Less code serving the same purpose is better | deprecation |
-| Source over memory | Verify framework behavior in primary docs before implementation | sdd |
+| Source over memory | Verify framework behavior in primary docs before implementation | build |
 | Save-point pattern | Commit early when exploring uncertain changes | git |
 | Evidence threshold | Concrete references, not speculation | review skills |
 

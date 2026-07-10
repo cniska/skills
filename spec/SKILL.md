@@ -43,7 +43,6 @@ Rules:
 ## See also
 
 - `plan` — design and decompose once the spec is stable
-- `sdd` — confirm the external API and library constraints the spec relies on
 - `architecture-review`, `doc-review` — where the *how* lives, and keeping the spec free of drift
 - [`template.md`](template.md) — the canonical section skeleton to copy from
 

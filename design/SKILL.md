@@ -41,7 +41,6 @@ Follow established project conventions consistently. When no convention exists, 
 
 ## See also
 
-- `sdd` for source-backed API and framework decisions
 - `architecture-review` for boundary and dependency integrity
 - `security-review` for trust-boundary risk review
 

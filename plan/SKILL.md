@@ -36,7 +36,6 @@ For non-trivial plans, track agreed steps in a checklist as the conversation pro
 ## See also
 
 - `build` for execution discipline per slice
-- `sdd` when plan decisions depend on external APIs or libraries
 
 ## Red flags
 

@@ -12,7 +12,7 @@ Build in thin vertical slices. Implement one piece, verify it, commit it, then m
 Before the first slice, if not already on a dedicated branch, create one. Consider an isolated worktree (`git worktree add -b <topic> .claude/worktrees/<topic>`) so the main session stays an orchestrator. Never use `git -C <path>` — always `cd` into the target first.
 
 1. **Pick the smallest slice** that delivers a complete, testable path through the change.
-2. **Read before writing.** Load the relevant files, understand existing patterns, check for utilities you can reuse.
+2. **Read before writing.** Load the relevant files, understand existing patterns, check for utilities you can reuse. For external libraries and version-sensitive APIs, confirm behavior against the docs or upstream source for the version pinned in this repo — not memory, not blog posts.
 3. **Implement the slice.** Stay within its boundary — don't fix adjacent issues or refactor unrelated code.
 4. **Verify the slice.** Run the targeted tests, then the project's full verification. The build must pass after every slice.
 5. **Commit the slice.** One logical change per commit.
@@ -30,7 +30,6 @@ A slice is one path, not one layer. Good: `POST /orders` endpoint + the form tha
 
 - `plan` for scope and phase boundaries
 - `tdd` for red-green-refactor within each slice
-- `sdd` for source validation before implementation choices
 
 ## Red flags
 
@@ -39,3 +38,4 @@ A slice is one path, not one layer. Good: `POST /orders` endpoint + the form tha
 - Mixing refactoring with feature work in the same slice
 - Expanding scope mid-slice instead of deferring to the next one
 - "I'll commit it all at the end"
+- Implementing a version-sensitive API from memory
