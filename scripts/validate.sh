@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 status=0
 
 # Allowed first words for imperative descriptions used in this repo.
-readonly IMPERATIVE_VERBS='implement|review|debug|deprecate|design|explore|manage|create|run|simplify|drive|ground|summarize'
+readonly IMPERATIVE_VERBS='implement|review|debug|deprecate|design|explore|manage|create|run|simplify|drive|ground|summarize|write'
 
 if command -v rg >/dev/null 2>&1; then
   has_red_flags() { rg -q '^## Red flags$' "$1"; }
@@ -67,9 +67,13 @@ while IFS= read -r -d '' skill_dir; do
     status=1
   fi
 
+  if grep -q 'references/' "$skill_file"; then
+    echo "ERROR: stale 'references/' link in $skill_file (references were inlined and removed)"
+    status=1
+  fi
+
 done < <(find "$ROOT_DIR" -mindepth 1 -maxdepth 1 -type d \
   ! -name '.*' \
-  ! -name 'references' \
   ! -name 'scripts' \
   -print0)
 

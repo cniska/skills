@@ -38,7 +38,6 @@ Mock at system boundaries (database, network, file system, external APIs), not b
 
 - `build` for slice-by-slice execution
 - `tests` for review-time test adequacy checks
-- `references/testing-patterns.md` for concrete test heuristics
 
 ## Red flags
 

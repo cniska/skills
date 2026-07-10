@@ -28,7 +28,6 @@ Implement against primary sources, not memory. Confirm behavior in official docs
 
 - `design` for contract-first boundaries
 - `build` for vertical slicing after source confirmation
-- `references/testing-patterns.md` for proof-oriented verification
 
 ## Red flags
 

@@ -26,6 +26,8 @@ Review the diff for exploitable security failures. Report only findings with a c
 - path boundary enforcement for file operations
 - path traversal and escaping project roots
 - shell/command execution safety
+- queries or commands built by string concatenation instead of parameterization
+- dynamic operations without an explicit allowlist
 - destructive operations without appropriate guards
 
 ### 4. Protocol abuse and resource exhaustion
@@ -45,6 +47,7 @@ Review the diff for exploitable security failures. Report only findings with a c
 - config defaults creating insecure behavior
 - unsafe opt-out flags or weak default modes
 - broad bypass options that disable enforcement when a narrower exception would do
+- unpinned or known-vulnerable dependencies
 
 ## Evidence threshold
 
@@ -71,7 +74,6 @@ Group as **Confirmed findings** | **Open questions** | **Optional hardening** (m
 
 - `design` for boundary-first contracts
 - `review` for merge gating and severity framing
-- `references/security-checklist.md` for implementation-level checks
 
 ## Red flags
 

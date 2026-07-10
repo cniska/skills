@@ -106,13 +106,6 @@ Skills reference three capability tiers instead of provider-specific model names
 | Save-point pattern | Commit early when exploring uncertain changes | git |
 | Evidence threshold | Concrete references, not speculation | review skills |
 
-## Reference checklists
-
-- [testing-patterns.md](references/testing-patterns.md)
-- [security-checklist.md](references/security-checklist.md)
-- [performance-checklist.md](references/performance-checklist.md)
-- [accessibility-checklist.md](references/accessibility-checklist.md)
-
 ## Validate skills
 
 Run the validator before publishing changes:

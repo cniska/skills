@@ -43,7 +43,7 @@ Follow established project conventions consistently. When no convention exists, 
 
 - `sdd` for source-backed API and framework decisions
 - `architecture` for boundary and dependency integrity
-- `references/security-checklist.md` for trust-boundary validation
+- `security` for trust-boundary risk review
 
 ## Red flags
 

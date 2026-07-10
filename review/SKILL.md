@@ -97,8 +97,6 @@ One section per review dimension (Style, Architecture, Documentation, Security, 
 ## See also
 
 - `style`, `architecture`, `docs`, `security`, `tests` for dimension-specific depth
-- `../references/security-checklist.md` for concrete abuse-path checks
-- `../references/testing-patterns.md` for test-quality review heuristics
 
 ## Red flags
 

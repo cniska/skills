@@ -30,6 +30,7 @@ Review test adequacy for changed code. For large changes spanning many files or 
 - missing cleanup (temp files, cache state)
 - mocking internals instead of testing through the real contract — mock at boundaries only
 - test names that don't read as specifications
+- tests with more than one reason to fail — assert one behavior each
 
 ### 4. Unnecessary tests
 
@@ -54,7 +55,6 @@ Group the summary by those labels. Cap Must-add/Should-add at ~5; fold the rest 
 
 - `tdd` for implementation-time test discipline
 - `review` for multi-axis merge decisions
-- `references/testing-patterns.md` for concrete coverage and quality checks
 
 ## Red flags
 

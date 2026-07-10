@@ -43,7 +43,6 @@ Group as **Canonical updates needed** | **Optional cleanup** (max 3, each tied t
 
 - `review` for cross-dimension merge decisions
 - `pr` for change summaries and issue linkage
-- `references/accessibility-checklist.md` for UI doc updates
 
 ## Red flags
 

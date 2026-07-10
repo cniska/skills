@@ -18,7 +18,6 @@ State the intent in one short paragraph. Keep it direct and specific.
 ## See also
 
 - `<related-skill>`
-- `references/<relevant-checklist>.md`
 
 ## Red flags
 
