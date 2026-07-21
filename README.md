@@ -83,7 +83,7 @@ Each skill is one self-contained file — `skills/<name>/SKILL.md`, with YAML fr
 - **Self-contained.** A skill depends on nothing outside its own directory — `npx skills add` copies only that skill's directory, so shared or repo-root files never ship. Guidance is inlined, not linked out.
 - **Compose by name.** Skills reference each other by name in `## See also` (`build`, `review`, …), never by path — no cross-directory links to break.
 - **Terse and imperative.** Intent, workflow, and a `## Red flags` section of failure modes. No filler.
-- **Provider-neutral.** Skills name capability tiers (`fast` / `standard` / `powerful`), not specific models — see below.
+- **Provider-neutral.** Skills name capability tiers (`fast` / `balanced` / `powerful`), not specific models — see below.
 
 `make validate` enforces the mechanical parts (frontmatter, `## Red flags`, no cross-directory links).
 
@@ -94,7 +94,7 @@ Skills reference three capability tiers instead of provider-specific model names
 | Tier | Role | Examples |
 |------|------|---------|
 | `fast` | Parallel reads, cheap context gathering | Haiku, GPT-4o-mini, Gemini Flash |
-| `standard` | Default session model | Sonnet, GPT-4o, Gemini Pro |
+| `balanced` | Default session model | Sonnet, GPT-4o, Gemini Pro |
 | `powerful` | Synthesis, high-stakes analysis, high reasoning effort | Opus, o1, Gemini Ultra |
 
 ## Principles
