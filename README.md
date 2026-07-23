@@ -3,8 +3,10 @@
 Engineering skills for AI coding agents. Compatible with [agentskills.io](https://agentskills.io).
 
 ```
-plan → build → review
+spec → plan → build → review → ship
 ```
+
+The five phases cover the software development lifecycle end to end: state what to build, design it, build it, review it, release it.
 
 I wrote these to work more efficiently with AI coding agents. They are opinionated, based on 15+ years of building production software, and encode the workflow I actually follow. They took shape while building [Acolyte](https://github.com/cniska/acolyte), where generic prompts did not hold up across sessions.
 
@@ -70,6 +72,7 @@ Active pre-push hook: [`.githook/pre-push`](.githook/pre-push).
 | | [security-review](skills/security-review/SKILL.md) | Trust boundaries, execution safety, concrete attack paths only |
 | | [test-review](skills/test-review/SKILL.md) | Coverage gaps, edge cases, test quality |
 | | [doc-review](skills/doc-review/SKILL.md) | Drift detection, terminology, outdated names |
+| **Ship** | [ship](skills/ship/SKILL.md) | Pre-release gate, version bump from commits, cut the tag |
 | **Meta** | [agents-md](skills/agents-md/SKILL.md) | Create or update AGENTS.md project rules |
 | | [docs](skills/docs/SKILL.md) | Create or update project documentation |
 | | [issue](skills/issue/SKILL.md) | File a GitHub issue — check duplicates, draft, get approval |
