@@ -11,13 +11,14 @@ One variable: does the reader already share this project? If yes, pointers can b
 
 ## Workflow
 
-1. Write `Next` first: the one concrete action the next session starts with, specific enough for a cold start. Everything else gets in only by tracing to it.
-2. Admit each further line by one test: **could the cold agent execute Next without this?** If yes, cut it — however much work it represents. "Important context" and "we decided this" don't count; a decision is recorded only if Next would otherwise violate it, and then as the rule, not its history.
-3. If this conversation opened with a prior handoff, merge: carry what still constrains Next, drop the rest. Never append verbatim.
-4. Budget check: the whole handoff fits on one screen (~150 words; more only if Next is genuinely multi-step). Longer means you drifted into reporting — cut, don't reorganize.
-5. Write it to `date -u +/tmp/handoff-%Y%m%dT%H%M%SZ.md` (silent — not the review copy).
-6. **Print it once** and ask whether it's good to copy or needs changes. If edits, rewrite the file and print the revision — never `cat` or repeat it otherwise.
-7. Once confirmed: copy to clipboard (`pbcopy < <path>` / `xclip -selection clipboard < <path>`). Tell the user to `/clear` and paste as the first message. Clearing is client-side — the user's one manual step.
+1. Commit any unfinished work first, if it's in a committable state and the project uses version control. A clean tree means the cold agent starts from a known point instead of reverse-engineering a working tree of half-done edits — and `Next` can then point at committed state rather than spending lines describing uncommitted diffs. A `wip:` commit is fine; note it in `Next` so the reader knows to build on or amend it. Skip only when the work genuinely can't be committed (broken build mid-refactor) — then say so in one line.
+2. Write `Next` first: the one concrete action the next session starts with, specific enough for a cold start. Everything else gets in only by tracing to it.
+3. Admit each further line by one test: **could the cold agent execute Next without this?** If yes, cut it — however much work it represents. "Important context" and "we decided this" don't count; a decision is recorded only if Next would otherwise violate it, and then as the rule, not its history.
+4. If this conversation opened with a prior handoff, merge: carry what still constrains Next, drop the rest. Never append verbatim.
+5. Budget check: the whole handoff fits on one screen (~150 words; more only if Next is genuinely multi-step). Longer means you drifted into reporting — cut, don't reorganize.
+6. Write it to `date -u +/tmp/handoff-%Y%m%dT%H%M%SZ.md` (silent — not the review copy).
+7. **Print it once** and ask whether it's good to copy or needs changes. If edits, rewrite the file and print the revision — never `cat` or repeat it otherwise.
+8. Once confirmed: copy to clipboard (`pbcopy < <path>` / `xclip -selection clipboard < <path>`). Tell the user to `/clear` and paste as the first message. Clearing is client-side — the user's one manual step.
 
 ## Format
 
