@@ -65,7 +65,7 @@ This document specifies what the tool must do, not how. Implementation choices a
 
 ## 6. Acceptance criteria
 
-<The tool is done for v1 when all of these hold. Each cites the requirements it exercises.>
+<The tool is done for v1 when all of these hold. Each cites the requirements it exercises, and each must be stateable as a trigger → observable outcome; if you can't, it isn't yet an acceptance criterion.>
 
 - **AC-1** — <observable, end-to-end condition; references the FRs it verifies.>
 - **AC-n** — <…>
