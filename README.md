@@ -6,7 +6,7 @@ Engineering skills for AI coding agents. Compatible with [agentskills.io](https:
 (spec →) plan → build → review → ship
 ```
 
-These cover the software development lifecycle end to end. `spec` is the optional entry point — reach for it when a project needs a written, verifiable contract of what to build, and start at `plan` when it doesn't. From there the phases run in order: plan it, build it, review it, ship it.
+These cover the software development lifecycle (SDLC) end to end. `spec` is the optional entry point — reach for it when a project needs a written, verifiable contract of what to build, and start at `plan` when it doesn't. From there the phases run in order: plan it, build it, review it, ship it.
 
 I wrote these to work more efficiently with AI coding agents. They are opinionated, based on 15+ years of building production software, and encode the workflow I actually follow. They took shape while building [Acolyte](https://github.com/cniska/acolyte), where generic prompts did not hold up across sessions.
 
