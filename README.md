@@ -16,6 +16,8 @@ Some ideas were refined after reviewing [addyosmani/agent-skills](https://github
 
 This repo exists to encode a practical engineering workflow for AI coding agents in my own tone and decision style. The goal is consistent execution quality across sessions, not generic prompt patterns.
 
+These are built for my own use, and I run the whole set with an `AGENTS.md` in every repo. That file is the grounding hub: skills defer to it for project-specific facts (verify and release commands, invariants, conventions) rather than restating them. Each skill still installs and runs on its own, but it's designed assuming the set and an `AGENTS.md` are present — install a lone skill into a repo without one and it falls back to sensible defaults rather than project truth. Use the [`agents-md`](skills/agents-md/SKILL.md) skill to create that hub first.
+
 ## How I update these skills
 
 Maintenance inputs: daily use in my own projects, gaps observed in real sessions, selective upstream review (for example Addy updates) as a signal, and external feedback when it aligns with these principles.
