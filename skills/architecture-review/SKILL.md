@@ -35,6 +35,9 @@ Default: if a layer carries no policy, invariants, or boundary isolation, remove
 - renamed contract terms stay aligned across the boundary; partial renames count as drift
 - dependency direction consistency
 - design-pattern consistency for extension seams
+- logic that reads another module's state more than its own; judge one function body at a time — how much of it traverses that module — not by whether the reference was injected or passed in
+- chained access (`a.getB().getC()`) reaching past a stated contract into internals the caller doesn't own
+- modules reaching into each other's internals instead of through a stated contract
 
 ### 4. Cohesion and responsibility
 
@@ -50,6 +53,8 @@ Default: if a layer carries no policy, invariants, or boundary isolation, remove
 ## Evidence threshold
 
 Only report issues with concrete evidence in code, contracts, or dependency flow. Prefer demonstrated issues over speculative concerns.
+
+An evidenced pattern is not automatically a defect. Reads through an injected collaborator, a documented facade, or a central store are idiomatic in the architectures built on them — flag one only where it also crosses a boundary the project itself states.
 
 ## Workflow
 
