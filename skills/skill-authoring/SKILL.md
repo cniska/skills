@@ -19,7 +19,7 @@ Two modes, inferred from the request:
 3. **Scaffold (Create only)**: `make new-skill NAME=<kebab-case> DESC="<imperative description>"`, or copy `SKILL_TEMPLATE.md`.
 4. **Write to the conventions**: imperative body, terse, `description` starts with a verb and says when to use it; reference other skills by bare name in `## See also`; end with `## Red flags`. Match wording to the sibling — same section order, same lead-in style.
 5. **Validate**: `make validate`.
-6. **Dry-run before commit**: run `skill-test` on unlike real repos for any material change, and fold convergent fixes back in.
+6. **Dry-run before commit**: run `skill-test` on unlike real repos for any material change, and fold convergent fixes back in. A change is material if it alters what the skill detects, flags, or produces — even one bullet — not if it merely reads that way; a wording-only fix with no behavioral change (typo, link, terminology) can skip the dry-run.
 7. **Commit** direct to `main` with a Conventional Commit subject — only once the user gives the go.
 
 ## See also
@@ -33,5 +33,6 @@ Two modes, inferred from the request:
 - Inventing a new structure instead of cloning the closest sibling
 - Blind-appending a rule on update instead of merging and trimming duplicates
 - Committing a materially changed skill without the `skill-test` dry-run
+- Treating a small diff as automatically non-material — a single new bullet can change what a skill flags
 - Growing a skill with rules for one-off friction instead of trimming
 - Referencing another skill by path instead of bare name
