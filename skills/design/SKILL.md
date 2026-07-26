@@ -36,7 +36,7 @@ Follow established project conventions consistently. When no convention exists, 
 1. **Identify the boundary.** What calls this? What does it return? Who else might consume it? Spawn **fast-tier** readers for existing analogous interfaces in the codebase — gather patterns before proposing new ones.
 2. **Define the schema.** Schema first, types inferred. Include descriptions for non-obvious fields.
 3. **Design for the common case.** Make the default behavior correct. Require explicit opt-in for unusual behavior. The synthesis pass — weighing tradeoffs, choosing the contract shape — benefits from a **powerful-tier** model with high reasoning effort.
-4. **Review for misuse.** Can a caller get into a bad state by passing valid-looking but wrong data? Add discriminants or branded types where confusion is likely.
+4. **Review for misuse.** Can a caller get into a bad state by passing valid-looking but wrong data? Add discriminants or branded types where confusion is likely. Can they call operations in the wrong order — an `init()` that must precede `run()` with nothing enforcing it? Encode required sequence in the types so the wrong order won't compile, rather than documenting it. Skip this where the caller can't reach the bad state anyway: a nullable type or exhaustive union that forces the check is already the encoding. On a stable public API or a mutable builder, weigh the cost — typestate can cost more than the runtime guard it replaces.
 5. **Check extensibility.** Can this be extended without modifying existing consumers?
 
 ## See also
