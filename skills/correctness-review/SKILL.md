@@ -24,7 +24,7 @@ Review whether the changed code actually does what it claims — the bugs that p
 ### 3. Control flow and async
 
 - missing `await`, unhandled rejection, or fire-and-forget that should block
-- errors swallowed or caught too broadly; a failure path that returns success
+- errors swallowed or caught too broadly; a failure path that returns success, or a substituted default the caller can't distinguish from a real value
 - unreachable code, or a branch that can't be entered
 
 ### 4. Contract
