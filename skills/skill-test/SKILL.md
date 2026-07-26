@@ -17,10 +17,6 @@ Diversity beats count: three repos that differ in shape (stack, release model, d
 4. **Act on convergence.** The same friction from independent runs is a defect in the skill — fix it. Friction from a single run is usually a legitimate per-project judgment call — leave it; encoding a rule for it cuts against delegating judgment to the model.
 5. **Fold fixes and re-verify.** Apply the convergent fixes to the skill, then re-run the worst-affected repo if the fix changed behavior materially. Clean up test outputs, or hand them to the user if they turned out better than what the repos had.
 
-## See also
-
-- `second-opinion` — cross-check the skill's design decisions with a different model before or after testing
-
 ## Red flags
 
 - Shipping a materially changed skill because it reads well

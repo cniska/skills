@@ -25,7 +25,6 @@ Two modes, inferred from the request:
 ## See also
 
 - `skill-test` — dry-run a changed skill on real repos before pushing
-- `second-opinion` — cross-check a skill's design with a different model
 
 ## Red flags
 
