@@ -23,6 +23,7 @@ Before changing or removing anything, understand why it exists. Check git blame,
 - **Generic names** (`data`, `result`, `temp`) — rename to describe content
 - **Duplicated logic** — extract to shared function (rule of 3)
 - **Dead code** — remove after confirming truly unreachable
+- **Comments that don't earn their keep** — remove ones that restate the code, banners/separators, and commented-out code; keep only a *why* a name, type, or test can't carry
 - **Wrappers that add no policy** — inline them
 
 ### 3. Apply incrementally

@@ -37,7 +37,7 @@ Check where the codebase already has a clear local pattern:
 
 ### 4. Readability and hygiene
 
-- no banner or separator comments
+- comments must earn their keep: flag any that restate *what* the code does, and banner/separator comments — a comment justifies itself only by a *why* a name, type, or test can't carry
 - no unused params, dead branches, or ad-hoc fallbacks
 - keep style aligned with nearby code
 - abstractions must earn their complexity — if a wrapper adds no value, inline it

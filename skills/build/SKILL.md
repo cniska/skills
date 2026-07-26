@@ -13,7 +13,7 @@ Before the first slice, if not already on a dedicated branch, create one. Consid
 
 1. **Pick the smallest slice** that delivers a complete, testable path through the change.
 2. **Read before writing.** Load the relevant files, understand existing patterns, check for utilities you can reuse. For external libraries and version-sensitive APIs, confirm behavior against the docs or upstream source for the version pinned in this repo — not memory, not blog posts.
-3. **Implement the slice.** Stay within its boundary — don't fix adjacent issues or refactor unrelated code.
+3. **Implement the slice.** Stay within its boundary — don't fix adjacent issues or refactor unrelated code. Comments must earn their keep: write one only for a *why* a name, type, or test can't carry — never narrate *what* the code does.
 4. **Verify the slice.** Run the targeted tests, then the project's full verification. The build must pass after every slice.
 5. **Commit the slice.** One logical change per commit.
 6. **Repeat.** Pick the next slice. If the plan needs adjusting, adjust it before continuing.
@@ -39,3 +39,4 @@ A slice is one path, not one layer. Good: `POST /orders` endpoint + the form tha
 - Expanding scope mid-slice instead of deferring to the next one
 - "I'll commit it all at the end"
 - Implementing a version-sensitive API from memory
+- Comments that restate the code, or banner/separator comments

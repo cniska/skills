@@ -12,7 +12,7 @@ Drive implementation through the red-green-refactor cycle.
 1. **Understand the behavior**: read enough code to know what the change should do and where it belongs.
 2. **Write one failing test**: the test describes the next behavior to add. It must fail for the right reason.
 3. **Make it pass**: write the minimum code to pass the test. Nothing more.
-4. **Refactor**: clean up while green. Improve naming, remove duplication, simplify structure. Run tests after each change.
+4. **Refactor**: clean up while green. Improve naming, remove duplication, simplify structure. Run tests after each change. Comments must earn their keep — a *why* a name, type, or test can't carry, never *what* the code does.
 5. **Repeat**: pick the next behavior and go back to step 2.
 
 One test at a time. Each cycle is vertical — one test, one implementation, one refactor pass. Do not write multiple tests before implementing.
@@ -47,3 +47,4 @@ Mock at system boundaries (database, network, file system, external APIs), not b
 - Adding speculative tests for edge cases that cannot happen
 - Refactoring while red
 - Skipping the refactor step because tests pass
+- Comments that restate the code instead of carrying a why
