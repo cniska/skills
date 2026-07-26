@@ -73,6 +73,11 @@ For each finding: **label** (Critical / Fix / Consider / Nit — see `review`), 
 
 Group as **Confirmed issues** | **Open questions** | **Optional refactors** (max 3, one line each; omit if empty). "No architectural findings" is a valid, complete result.
 
+## See also
+
+- `simplify` for performing the moves this review identifies
+- `design` for the interface shape behind a boundary finding
+
 ## Red flags
 
 - Suggesting speculative frameworks or plugin systems

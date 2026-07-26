@@ -41,6 +41,12 @@ One move at a time. Run tests after each change. If tests fail, revert and recon
 
 All existing tests must pass without modification — if tests needed updating, you likely changed behavior. The diff should be clean with no unrelated changes mixed in.
 
+## See also
+
+- `review` for the loop that surfaces these findings
+- `architecture-review` for finding misplaced logic and indirection
+- `style-review` for finding naming and hygiene drift
+
 ## Red flags
 
 - Simplification that requires modifying tests to pass (likely changed behavior)

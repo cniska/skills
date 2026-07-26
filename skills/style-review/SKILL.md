@@ -65,6 +65,10 @@ For each finding: **label** (Critical / Fix / Consider / Nit — see `review`), 
 
 Order Critical → Fix → Consider → Nit. If nothing clears the threshold, report "No style findings" — don't pad.
 
+## See also
+
+- `simplify` for performing the cleanups this review identifies
+
 ## Red flags
 
 - Enforcing generic style dogma over local conventions
