@@ -27,7 +27,7 @@ Separate refactoring from feature work. Separate formatting from behavior change
 
 ## Branch workflow
 
-- Start from latest main branch.
+- When using raw Git, start task branches from the current integration base, normally `origin/main`; fetch first rather than updating a shared primary checkout.
 - Use short topic branch names without type prefixes, e.g. `signal-toolkit`, not `feat/signal-toolkit`.
 - Keep branches short-lived — merge within days, not weeks.
 - Rewrite local history before pushing — amend, rebase, squash to keep history clean. Commit noise should never become permanent.
@@ -36,6 +36,15 @@ Separate refactoring from feature work. Separate formatting from behavior change
 - Never use `git -C <path>` — always `cd` into the target first. It hides the real working directory and risks operating on the wrong repo.
 - Land PRs with the repo's configured merge method. When none is set, default to squash — keeps history linear, one merge commit per PR.
 - After a PR merges, prune the branch locally and on the remote, then `git fetch --prune` to clear stale tracking refs.
+
+## Worktrees
+
+- Treat worktrees as disposable branch sandboxes. Keep the primary checkout as an orchestrator, not a task workspace.
+- Create each task in a fresh topic branch using a separate worktree.
+- Run `git worktree list` before creating or removing one, and `git status` before beginning work or cleanup.
+- Run Git commands from the target worktree; never use `git -C <path>`.
+- Remove a worktree after its branch is merged or abandoned. Do not remove one with uncommitted changes.
+- Follow repository-specific worktree setup and cleanup commands when they exist; they determine the task's base and setup. When a worktree is gone outside Git, run `git worktree prune` to clear stale metadata.
 
 ## Save-point pattern
 
@@ -55,3 +64,4 @@ After a set of changes, provide a structured summary:
 - Force-pushing to shared branches
 - Mixing unrelated changes in one commit
 - Working without committing for extended periods
+- Removing a worktree without checking its status
