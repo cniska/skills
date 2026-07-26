@@ -24,6 +24,7 @@ Review naming, coding patterns, and style consistency against the codebase's exi
 - prefer explicit status/state fields over boolean flags for state transitions
 - prefer guard clauses and early returns over deep nesting
 - prefer data-driven lookups over long control-flow chains
+- one error boundary per failure mode: nested or back-to-back `try` blocks mean the boundary hasn't been decided — extract each fallible step into a function that handles or propagates
 
 ### 3. Pattern consistency
 
