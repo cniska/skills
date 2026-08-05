@@ -84,6 +84,19 @@ If the change adds a dependency, check:
 
 Every dependency is a liability.
 
+## Migration review
+
+If the change includes database migrations, run this pass too and file its findings under the dimensions above — a schema defect is a correctness or security finding, not a category of its own.
+
+- **Nullability is a claim about the domain.** A `not null` column forecloses states that may legitimately exist; a nullable one invites a caller that forgets. Ask which states the table must be able to represent, not which are convenient now.
+- **Inner joins on a nullable column silently drop rows.** Check every view and function that joins the new table — a row with no parent should be absent by choice, never by accident.
+- **Row-level security on by default.** Every new table either has RLS with policies covering each access path, or is deny-all with no client grant. An enabled-but-policyless table that something still reads is a bypass hiding elsewhere.
+- **Privileged functions need all three guards:** an explicit authorization check, a pinned `search_path`, and execute revoked from `PUBLIC` before being granted — most engines grant to everyone by default.
+- **Names outlive the first use case.** A table named for today's only caller costs a migration when the second arrives; check the name against what the table will hold, not what wrote to it first.
+- **A closed set needs somewhere for the unclassifiable case**, or callers mislabel it as the nearest available value and the data stops meaning anything.
+- **An already-applied migration cannot be edited in place** — most tools skip versions the target has recorded, so the file and the database diverge silently. Either fold the change into the original and rebuild the environment, or add a follow-up.
+- Schema documentation updates in the same change, and unmerged migrations get folded into the original rather than stacked as corrections.
+
 ## Fix policy
 
 - **Self:** fix all findings by default — including trivial ones — each as its own subject-scoped commit. Small issues left unfixed accumulate into tech debt. Where a finding is structural rather than a defect — complexity, misplaced logic, indirection — load `simplify` and apply its named moves, one per commit.
@@ -107,6 +120,7 @@ One section per review dimension (Correctness, Style, Architecture, Documentatio
 
 - `correctness-review`, `style-review`, `architecture-review`, `doc-review`, `security-review`, `test-review` for dimension-specific depth
 - `simplify` for acting on structural findings
+- `explain-diff` for building the understanding this skill judges against, on a complex or unfamiliar change
 
 ## Red flags
 
