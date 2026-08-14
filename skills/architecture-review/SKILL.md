@@ -17,7 +17,7 @@ Flag layers that add no architectural value:
 - pass-through facades that only rename or re-export
 - alias/wrapper layers without independent policy or invariants
 - DI bags exceeding practical seam or testing needs
-- singleton imports in library modules that should accept injected params
+- singleton imports in library modules that should accept injected params — an application reading its own central store is idiomatic and not this finding
 - facade-for-facade chains
 
 Default: if a layer carries no policy, invariants, or boundary isolation, remove it.
@@ -41,9 +41,10 @@ Default: if a layer carries no policy, invariants, or boundary isolation, remove
 
 ### 4. Cohesion and responsibility
 
-- oversized or multi-responsibility files
+- oversized or multi-responsibility files — size alone isn't the finding, so name the second responsibility or don't report it
 - SRP violations: mixing unrelated concerns
-- boundary-local duplication is acceptable if it preserves clarity
+- the same at function scale: a body past ~50 lines, one long enough to need section comments to navigate, or one that computes a result and formats it for presentation in the same pass
+- duplication past a third copy wants a name, whether the copies sit in one file or across modules; a substantial block repeated even twice counts, where three near-identical lines do not — the exception is boundary-local duplication kept deliberately so two modules stay independent
 
 ### 5. Portability and product fit
 

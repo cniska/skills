@@ -117,7 +117,7 @@ Skills reference three capability tiers instead of provider-specific model names
 | Prove-It pattern | Failing test before fix | debug, tdd |
 | Mock at boundaries | Mock external systems, not internal functions | tdd, test-review |
 | DAMP over DRY | Descriptive tests over deduplicated tests | tdd |
-| Rule of 3 | Extract after three instances, not before | simplify, style-review |
+| Rule of 3 | Extract after three instances, not before — though a substantial block earns a name on its second | simplify, architecture-review |
 | Chesterton's Fence | Understand before removing | simplify |
 | Hyrum's Law | All observable behavior becomes a commitment | design, deprecation |
 | Code as liability | Less code serving the same purpose is better | deprecation |

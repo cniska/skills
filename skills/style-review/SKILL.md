@@ -12,6 +12,7 @@ Review naming, coding patterns, and style consistency against the codebase's exi
 ### 1. Naming and shape consistency
 
 - naming consistency across types, constants, functions, and files
+- names that describe their content rather than their category, judged in context: a bare `data`, `temp`, or `result` holding something specific is the smell, but the same word is right where it is the domain's own term or a published API name — check the spec and the exports before flagging one
 - renamed concepts stay aligned across code, tests, docs, and exported identifiers
 - constructor and factory naming follows a single project convention
 - module and file layout follows the established project structure
@@ -22,8 +23,8 @@ Review naming, coding patterns, and style consistency against the codebase's exi
 - exhaustive handling of state variants where applicable
 - consistent assertion and error patterns
 - prefer explicit status/state fields over boolean flags for state transitions
-- prefer guard clauses and early returns over deep nesting
-- prefer data-driven lookups over long control-flow chains
+- prefer guard clauses and early returns over deep nesting — three levels of conditional in one body is the trigger
+- prefer data-driven lookups over long control-flow chains, counting one predicate re-tested through a body and short dispatches whose arms share an implementation
 - one error boundary per failure mode: nested or back-to-back `try` blocks mean the boundary hasn't been decided — extract each fallible step into a function that handles or propagates
 
 ### 3. Pattern consistency
@@ -41,9 +42,10 @@ Check where the codebase already has a clear local pattern:
 - comments must earn their keep: flag any that restate *what* the code does, and banner/separator comments — a comment justifies itself only by a *why* a name, type, or test can't carry
 - no unused params, dead branches, or ad-hoc fallbacks
 - keep style aligned with nearby code
-- abstractions must earn their complexity — if a wrapper adds no value, inline it
+- abstractions must earn their complexity — if a wrapper adds no value, inline it, judged against the language's own idiom rather than a general one: a newtype, or a constructor delegating to a default, is conventional and not an empty wrapper
 - avoid nested ternaries for branching logic; use explicit conditionals, maps, or helpers when multiple cases affect readability
 - prefer clarity over cleverness: dense one-liners that require a mental pause should be simplified
+- a temp holding a complex expression, where the expression itself would read better named as a query
 
 ## Evidence threshold
 
@@ -63,7 +65,7 @@ For each finding: **label** (Critical / Fix / Consider / Nit — see `review`), 
 - Bad: "`getUserData` — inconsistent, should be `fetchUserData`." (no evidence)
 - Good: **Fix** — `src/api/user.ts:12` `getUserData` breaks the fetch-prefix convention (9 of 10 siblings in `src/api/` use `fetch*`). Rename to `fetchUserData`.
 
-Order Critical → Fix → Consider → Nit. If nothing clears the threshold, report "No style findings" — don't pad.
+Order Critical → Fix → Consider → Nit. If nothing clears the threshold, report "No style findings" — don't pad. Aggregate repeated instances of one smell into a single finding carrying a count and two or three representative locations; ten separate entries for one pattern drown the review they sit in.
 
 ## See also
 
