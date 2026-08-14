@@ -99,11 +99,13 @@ Each skill is one self-contained file — `skills/<name>/SKILL.md`, with YAML fr
 
 Skills reference three capability tiers instead of provider-specific model names. Map them to whatever you're running:
 
-| Tier | Role | Examples |
+| Tier | Role | How to pick |
 |------|------|---------|
-| `fast` | Parallel reads, cheap context gathering | Haiku, GPT-4o-mini, Gemini Flash |
-| `balanced` | Default session model | Sonnet, GPT-4o, Gemini Pro |
-| `powerful` | Synthesis, high-stakes analysis, high reasoning effort | Opus, o1, Gemini Ultra |
+| `fast` | Parallel reads, cheap context gathering | The smallest model in your lineup — the one you'd happily run five of at once |
+| `balanced` | Default session model | Whatever you already code with day to day |
+| `powerful` | Synthesis, high-stakes analysis, high reasoning effort | The strongest reasoning model you have access to, run at high effort |
+
+Naming actual models here would be wrong within months, so this column gives the rule for choosing rather than the answer. The validator rejects provider model names anywhere in the repo.
 
 ## Principles
 

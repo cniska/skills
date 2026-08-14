@@ -12,7 +12,7 @@ Review naming, coding patterns, and style consistency against the codebase's exi
 ### 1. Naming and shape consistency
 
 - naming consistency across types, constants, functions, and files
-- names that describe their content rather than their category, judged in context: a bare `data`, `temp`, or `result` holding something specific is the smell, but the same word is right where it is the domain's own term or a published API name — check the spec and the exports before flagging one
+- names that describe their content rather than their category, judged in context: a bare `data`, `temp`, or `result` holding something specific is the smell, but the same word is right where it is the domain's own term, a published API name, or an accumulator the function builds and returns — check the spec and the exports before flagging one
 - renamed concepts stay aligned across code, tests, docs, and exported identifiers
 - constructor and factory naming follows a single project convention
 - module and file layout follows the established project structure
@@ -24,7 +24,7 @@ Review naming, coding patterns, and style consistency against the codebase's exi
 - consistent assertion and error patterns
 - prefer explicit status/state fields over boolean flags for state transitions
 - prefer guard clauses and early returns over deep nesting — three levels of conditional in one body is the trigger
-- prefer data-driven lookups over long control-flow chains, counting one predicate re-tested through a body and short dispatches whose arms share an implementation
+- prefer data-driven lookups over long control-flow chains; likewise for one predicate re-tested throughout a body, and for a dispatch whose arms share an implementation. Not an exhaustive match over a closed type — a lookup table there trades a compile-time guarantee for a runtime one
 - one error boundary per failure mode: nested or back-to-back `try` blocks mean the boundary hasn't been decided — extract each fallible step into a function that handles or propagates
 
 ### 3. Pattern consistency

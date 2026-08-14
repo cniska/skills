@@ -7,6 +7,12 @@ status=0
 # Allowed first words for imperative descriptions used in this repo.
 readonly IMPERATIVE_VERBS='implement|review|debug|deprecate|design|manage|create|run|simplify|drive|write|test|explain'
 
+# Skills name capability tiers, never models — a named model dates the guidance.
+# Model families only: "Claude" alone is a tool reference (CLAUDE.md, Claude Code).
+readonly MODEL_NAMES='sonnet|opus|haiku|fable|gpt|gemini|llama|mistral|grok|deepseek|qwen'
+
+has_model_name() { grep -qwiE "$MODEL_NAMES" "$1"; }
+
 if command -v rg >/dev/null 2>&1; then
   has_red_flags() { rg -q '^## Red flags$' "$1"; }
   has_anti_patterns() { rg -q '^## Anti-patterns$' "$1"; }
@@ -72,7 +78,19 @@ while IFS= read -r -d '' skill_dir; do
     status=1
   fi
 
+  if has_model_name "$skill_file"; then
+    echo "ERROR: named model in $skill_file (use a fast/balanced/powerful tier instead)"
+    grep -nwiE "$MODEL_NAMES" "$skill_file" | sed 's/^/  /'
+    status=1
+  fi
+
 done < <(find "$ROOT_DIR/skills" -mindepth 1 -maxdepth 1 -type d -print0)
+
+if has_model_name "$ROOT_DIR/README.md"; then
+  echo "ERROR: named model in README.md (describe how to pick a tier, not today's models)"
+  grep -nwiE "$MODEL_NAMES" "$ROOT_DIR/README.md" | sed 's/^/  /'
+  status=1
+fi
 
 if [[ $status -eq 0 ]]; then
   echo "OK: skill validation passed"

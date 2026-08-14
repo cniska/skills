@@ -41,10 +41,10 @@ Default: if a layer carries no policy, invariants, or boundary isolation, remove
 
 ### 4. Cohesion and responsibility
 
-- oversized or multi-responsibility files — size alone isn't the finding, so name the second responsibility or don't report it
+- oversized or multi-responsibility files — for a *file*, size alone isn't the finding, so name the second responsibility or don't report it
 - SRP violations: mixing unrelated concerns
-- the same at function scale: a body past ~50 lines, one long enough to need section comments to navigate, or one that computes a result and formats it for presentation in the same pass
-- duplication past a third copy wants a name, whether the copies sit in one file or across modules; a substantial block repeated even twice counts, where three near-identical lines do not — the exception is boundary-local duplication kept deliberately so two modules stay independent
+- at *function* scale length is a finding on its own: a body past ~50 lines, one needing section comments to navigate, or one that computes a result and then formats it for presentation. An exhaustive match or switch whose length is entirely its arms is not this — there is no substructure to lift out
+- duplication wants a name once it is a substantial block repeated twice or a small one repeated three times, in one file or across modules — size and copy count trade off against each other, so a two-line body appearing seven times counts. Leave what is duplicated on purpose: boundary-local copies keeping two modules independent, and conditionally-compiled twins that merging would defeat
 
 ### 5. Portability and product fit
 

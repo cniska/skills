@@ -28,10 +28,10 @@ Each smell maps to one named move — name it in the commit subject to keep one 
 - **Repeated argument groups** — introduce parameter object
 - **Nested ternaries** — replace with if/else or lookups
 - **Generic names** (`data`, `result`, `temp`) — rename to describe content
-- **Duplicated logic** — extract to shared function (rule of 3)
+- **Duplicated logic** — extract to shared function; three small copies or two substantial ones, and don't touch copies kept deliberately apart (boundary-local, conditionally compiled)
 - **Dead code** — remove after confirming truly unreachable
 - **Comments that don't earn their keep** — remove ones that restate the code, banners/separators, and commented-out code; keep only a *why* a name, type, or test can't carry
-- **Wrappers that add no policy** — inline function
+- **Wrappers that add no policy** — inline function, judged against the language's own idiom: a newtype, a constructor delegating to a default, or accessors over private fields are conventional, not empty wrappers
 
 ### 3. Apply incrementally
 
