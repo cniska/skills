@@ -16,9 +16,9 @@ One variable: does the reader already share this project? If yes, pointers can b
 3. Admit each further line by one test: **could the cold agent execute Next without this?** If yes, cut it — however much work it represents. "Important context" and "we decided this" don't count; a decision is recorded only if Next would otherwise violate it, and then as the rule, not its history.
 4. If this conversation opened with a prior handoff, merge: carry what still constrains Next, drop the rest. Never append verbatim.
 5. Budget check: the whole handoff fits on one screen (~150 words; more only if Next is genuinely multi-step). Longer means you drifted into reporting — cut, don't reorganize.
-6. Write it to `date -u +/tmp/handoff-%Y%m%dT%H%M%SZ.md` (silent — not the review copy).
-7. **Print it once** and ask whether it's good to copy or needs changes. If edits, rewrite the file and print the revision — never `cat` or repeat it otherwise.
-8. Once confirmed: copy to clipboard (`pbcopy < <path>` / `xclip -selection clipboard < <path>`). Tell the user to `/clear` and paste as the first message. Clearing is client-side — the user's one manual step.
+6. Write it to `date -u +/tmp/handoff-%Y%m%dT%H%M%SZ.md` and copy it in the same step (`pbcopy < <path>` / `xclip -selection clipboard < <path>`) — no confirmation gate.
+7. **Print the whole handoff verbatim in your reply.** The write and the copy are both silent and tool output is truncated, so this is the only place the user sees it — print the body as prose, never a `cat`. Once, then stop.
+8. Tell the user to `/clear` and paste as the first message — clearing is client-side, their one manual step. On requested edits: rewrite, re-copy, reprint in full.
 
 ## Format
 
@@ -58,4 +58,5 @@ Write only what the reader must do or not do next. A line earns its place by cha
 - Handoff longer than one screen, or longer than the work `Next` describes.
 - Restating what `git log`, the code, or standing docs already hold.
 - Prior handoff appended instead of merged.
+- Handoff never printed in the reply — writing the file or copying it doesn't count; the user sees neither.
 - Printing the handoff more than once.
