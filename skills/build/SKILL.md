@@ -14,7 +14,7 @@ Before the first slice, if not already on a dedicated branch, create one. Consid
 1. **Pick the smallest slice** that delivers a complete, testable path through the change.
 2. **Read before writing.** Load the relevant files, understand existing patterns, check for utilities you can reuse. For external libraries and version-sensitive APIs, confirm behavior against the docs or upstream source for the version pinned in this repo — not memory, not blog posts.
 3. **Implement the slice.** Stay within its boundary — don't fix adjacent issues or refactor unrelated code. Comments must earn their keep: write one only for a *why* a name, type, or test can't carry — never narrate *what* the code does. Don't hedge: a default or `catch`-and-continue written because you don't know the correct behavior turns uncertainty into silent runtime behavior — ask, or fail where the caller can see it. Degradation you chose on purpose is fine; say so in a comment where the choice isn't obvious from the line.
-4. **Verify the slice.** Run the targeted tests, then the project's full verification. The build must pass after every slice.
+4. **Verify the slice.** Run the targeted tests; they must pass before the next slice starts. Run the project's full verification once before pushing or opening a PR.
 5. **Commit the slice.** One logical change per commit.
 6. **Repeat.** Pick the next slice. If the plan needs adjusting, adjust it before continuing.
 
