@@ -41,6 +41,7 @@ Check where the codebase already has a clear local pattern:
 
 - comments must earn their keep: flag any that restate *what* the code does, and banner/separator comments — a comment justifies itself only by a *why* a name, type, or test can't carry
 - no unused params, dead branches, or ad-hoc fallbacks
+- a new inline comment silencing a type, lint, or security check, or a stub standing where the work should be — an unimplemented throw, an empty catch turning a failure into silence. Flag it unless the diff says why
 - keep style aligned with nearby code
 - abstractions must earn their complexity — if a wrapper adds no value, inline it, judged against the language's own idiom rather than a general one: a newtype, or a constructor delegating to a default, is conventional and not an empty wrapper
 - avoid nested ternaries for branching logic; use explicit conditionals, maps, or helpers when multiple cases affect readability
@@ -50,6 +51,8 @@ Check where the codebase already has a clear local pattern:
 ## Evidence threshold
 
 Sections 1 and 3 require evidence of a local convention — cite the nearby code that establishes it. Sections 2 and 4 are default checks that apply without repo evidence, but cap them at **Consider** unless a documented convention elevates them. Never report a default check as must-fix.
+
+A suppression comment is the exception: the lint or type config it silences is itself the documented convention, so cite that config and label it **Fix**.
 
 ## Workflow
 

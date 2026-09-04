@@ -32,7 +32,7 @@ Refactoring mixed with feature work is two changes. Flag it.
 
 1. If the branch was built in a long session, suggest the user run `handoff` and re-run `/review` in a fresh session for a cleaner read. Otherwise proceed here.
 2. Determine diff scope: `git log main..HEAD --oneline` and `git diff main...HEAD --stat`. If no commits ahead of `main`, report and stop.
-3. **Get an independent second opinion first.** Spawn a fresh `general-purpose` subagent to review the diff independently — it isn't anchored to the author's mental model. Give it the diff, intent, and specific failure modes to probe. Ask for concrete findings with evidence only. Run on the balanced-tier model, not a cheaper tier.
+3. **Get an independent second opinion first.** Spawn a fresh `general-purpose` subagent to review the diff independently — it isn't anchored to the author's mental model. Give it the diff, intent, and specific failure modes to probe. Ask for concrete findings with evidence only. Withhold your own read of the diff — hand over conclusions and what comes back is agreement with them. Run on the balanced-tier model, not a cheaper tier.
 4. Read changed files in full, plus any project-level convention docs. **Review tests first** — they reveal intent and coverage gaps.
 5. **For large diffs** (more than 3 files), fan out **fast-tier** sub-agents — one per logical area — to surface candidate findings. Verify each before including it.
 6. Run the six dimension passes in this session — load each skill (`correctness-review`, `style-review`, `architecture-review`, `doc-review`, `security-review`, `test-review`) and apply its criteria to the diff, one pass per dimension. If a skill fails to load, say so in that category's output rather than improvising.

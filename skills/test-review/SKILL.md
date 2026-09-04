@@ -1,6 +1,6 @@
 ---
 name: test-review
-description: Review test adequacy for changed code — meaningful gaps, quality problems, and unnecessary tests. Use when reviewing whether changed code has adequate tests.
+description: Review test adequacy for changed code — meaningful gaps, quality problems, unnecessary tests, and checks the diff weakened. Use when reviewing whether changed code has adequate tests, or when a suite went green after tests were skipped, deleted, or stripped of assertions.
 ---
 
 # Test Review
@@ -38,6 +38,17 @@ Review test adequacy for changed code. For large changes spanning many files or 
 - tests duplicating what the type system guarantees
 - tests for code that has since changed
 
+### 5. Weakened checks
+
+Read the diff against the branch point, not just the new code — a change can make a check stop checking:
+
+- a test skipped, deleted, or narrowed so the suite no longer runs it
+- assertions pulled out of a test that stayed, leaving it green either way
+- an exclusion that drops code from coverage or mutation measurement instead of testing it
+- a threshold edited down, or a suite moved out of the blocking stage
+
+Label these `Restore` unless the diff or commit message says why. The weakening is the finding; the behavior left unguarded underneath is a second one.
+
 ## Evidence threshold
 
 Flag a gap as Must-add or Should-add only if you can name the concrete bug or regression the test would catch. If you can't name the bug, don't flag it. Never demand 100% coverage.
@@ -47,7 +58,7 @@ Flag a gap as Must-add or Should-add only if you can name the concrete bug or re
 
 ## Output
 
-For each finding: **label** (`Must-add` | `Should-add` | `Optional` | `Remove`), **source file + test file**, **what is untested**, **why it matters** (the concrete bug the test would catch), **fix direction**. When invoked from `review`, map Must-add → Critical/Fix, Should-add → Fix, Optional/Remove → Consider.
+For each finding: **label** (`Restore` | `Must-add` | `Should-add` | `Optional` | `Remove`), **source file + test file**, **what is untested**, **why it matters** (the concrete bug the test would catch), **fix direction**. When invoked from `review`, map Restore → Critical, Must-add → Critical/Fix, Should-add → Fix, Optional/Remove → Consider.
 
 Group the summary by those labels. Cap Must-add/Should-add at ~5; fold the rest into one Optional line or omit. If nothing clears the threshold, say "No test findings".
 
@@ -63,3 +74,5 @@ Group the summary by those labels. Cap Must-add/Should-add at ~5; fold the rest 
 - Suggesting tests that only verify the type system
 - Broad test rewrites instead of targeted additions
 - Confusing test quantity with quality
+- Reading only the new code, so a skipped test or a stripped assertion elsewhere in the diff goes unmentioned
+- Accepting a green suite as evidence when the diff is what made it green
